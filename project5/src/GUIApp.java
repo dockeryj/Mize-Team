@@ -12,7 +12,7 @@ public class GUIApp{
         final Deck deck = new Deck();
         final JFrame view = new MainView(deck);
         view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        view.setSize(200, 200);
+        view.setSize(600, 400);
         view.setVisible(true);
     }
 }
