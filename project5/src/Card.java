@@ -7,9 +7,6 @@ import javax.swing.*;
  *
  */
 
-
-//helloooo
-
 public class Card implements Comparable<Card>{
 
     private Suit suit;
