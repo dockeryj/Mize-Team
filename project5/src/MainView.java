@@ -73,12 +73,15 @@ public class MainView extends JFrame{
 			statsField.setText(model.toString());
 			//p1Card.setCard();
 			//p2Card.setCard();
+			//model.step needs to return in some way a card image to be displayed. Also,
+			// 	the .toString() method is not displaying in the statsField.
 		}
 	}
 	
 	private class NewGameListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			model.step();
+			//this isnt the right method, but can easily be fixed
 		}
 	}
     
