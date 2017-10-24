@@ -100,5 +100,4 @@ public class WarGame {
     		else return(null);
     }
 	
-	
 }

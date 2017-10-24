@@ -20,6 +20,8 @@ public class MainView extends JFrame{
     private JButton newGameButton = new JButton("New Game");
     private Container mainContainer = getContentPane();
     private JTextField statsField = new JTextField("");
+    private CardPanel p1Card = new CardPanel();
+    private CardPanel p2Card = new CardPanel();
     
     public MainView(WarGame model){
         this.model = model;
@@ -47,11 +49,10 @@ public class MainView extends JFrame{
        
         // Create Center Panel
         centerPanel.setLayout(new GridLayout(0,3));
-        centerPanel.add(new CardPanel());
+        centerPanel.add(p1Card);
         centerPanel.add(statsField);
-        centerPanel.add(new CardPanel());
+        centerPanel.add(p2Card);
         
-       
         // Create the South Panel
         southPanel.add(moveButton);
         southPanel.add(newGameButton);
@@ -70,7 +71,8 @@ public class MainView extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			model.step();
 			statsField.setText(model.toString());
-			
+			//p1Card.setCard();
+			//p2Card.setCard();
 		}
 	}
 	
