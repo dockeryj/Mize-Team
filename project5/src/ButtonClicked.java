@@ -1,5 +1,5 @@
 
-public class buttonClick extends JFrame{
+public class ButtonClick extends JFrame{
 
 	
 	
