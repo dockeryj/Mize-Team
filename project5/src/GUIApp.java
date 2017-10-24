@@ -9,8 +9,8 @@ import javax.swing.JFrame;
 public class GUIApp{
 
     public static void main(String[] args){
-        final Deck deck = new Deck();
-        final JFrame view = new MainView(deck);
+        final WarGame model = new WarGame();
+        final JFrame view = new MainView(model);
         view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         view.setSize(600, 400);
         view.setVisible(true);
