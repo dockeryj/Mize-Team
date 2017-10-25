@@ -53,7 +53,7 @@ public class WarGame {
     		Card card2 = player2.getCard();
     		gameState = "Player 1: " + card1.toString() + "\n" + "Player 2: " + card2.toString();
     		if (card1.getRank() == card2.getRank()) {
-    			gameState += "Cards added to war pile";
+    			gameState += "\n Cards added to war pile";
     			player1.addToWarPile(card1);
     			player2.addToWarPile(card2);
     		}
