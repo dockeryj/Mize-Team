@@ -30,6 +30,12 @@ public class WarGame {
      * @return gameState
      */
 	public String toString(){
+		String statistics1 = "";
+		String lineSpaces = String.format("%n%n");
+		String statistics2 = "";
+		statistics1 = String.format("Player 1:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:"); 
+		statistics2 = String.format("Player 2:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:");
+		gameState = statistics1 + lineSpaces + statistics2 + lineSpaces + this.moveCount;
 		return gameState;
 	    }
 	

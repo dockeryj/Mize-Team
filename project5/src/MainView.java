@@ -78,7 +78,7 @@ public class MainView extends JFrame{
 			String statistics2 = "";
 			statistics1 = String.format("Player 1:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:"); 
 			statistics2 = String.format("Player 2:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:");
-			String allStatistics = statistics1 + lineSpaces + statistics2 + lineSpaces + model.;
+			String allStatistics = statistics1 + lineSpaces + statistics2 + lineSpaces;
 			statsField.setText(allStatistics);
 			
 			
