@@ -13,7 +13,7 @@ public class MainView extends JFrame{
     private JButton moveButton = new JButton("Move");
     private JButton newGameButton = new JButton("New Game");
     private Container mainContainer = getContentPane();
-    private JTextField statsField = new JTextField("");
+    private JTextArea statsField = new JTextArea();
     private CardPanel p1Card = new CardPanel();
     private CardPanel p2Card = new CardPanel();
 	private WarGame model;
@@ -50,6 +50,7 @@ public class MainView extends JFrame{
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridLayout(0,3));
         centerPanel.add(p1Card);
+        statsField.setEnabled(false);
         centerPanel.add(statsField);
         centerPanel.add(p2Card);
         
@@ -72,11 +73,17 @@ public class MainView extends JFrame{
     private class MoveListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			model.step();
-			statsField.setText(model.toString());
-			//p1Card.setCard();
-			//p2Card.setCard();
-			//model.step needs to return in some way a card image to be displayed. Also,
-			// 	the .toString() method is not displaying in the statsField.
+			String statistics1 = "";
+			String lineSpaces = String.format("%n%n");
+			String statistics2 = "";
+			statistics1 = String.format("Player 1:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:"); 
+			statistics2 = String.format("Player 2:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:");
+			String allStatistics = statistics1 + lineSpaces + statistics2 + lineSpaces + model.;
+			statsField.setText(allStatistics);
+			
+			
+			
+			
 		}
 	}
 	
