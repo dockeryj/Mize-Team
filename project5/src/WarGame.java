@@ -15,8 +15,7 @@ public class WarGame {
 	
 	
 	/**
-     * Creates a war game with 2 players, a shuffled deck,
-     * and a warpile
+     * Creates a war game with 2 players and a shuffled deck
      */
 	public WarGame() {
 		player1 = new Player();
@@ -46,41 +45,28 @@ public class WarGame {
 	
     /**
      * Makes one move in the game
-     * return the two cards played ADD RETURN
+     * return the two cards played
      */
     public void step(){
     		Card card1 = player1.getCard();
     		Card card2 = player2.getCard();
+    		player1.addToWarPile(card1);
+		player2.addToWarPile(card2);
     		gameState = "Player 1: " + card1.toString() + "\n" + "Player 2: " + card2.toString();
     		if (card1.getRank() == card2.getRank()) {
     			gameState += "\n Cards added to war pile";
-    			player1.addToWarPile(card1);
-    			player2.addToWarPile(card2);
     		}
     		else if (card1.getRank() > card2.getRank()) {
     			gameState += "\n Cards go to Player 1";
-    			player1.addToWinningsPile(card1);
-    			player1.addToWinningsPile(card2);
-    			int i = 0;
-    			while (! player1.warPile.isEmpty()) {
-    				player1.addToWinningsPile(player1.warPile.remove(i));
-    				player1.addToWinningsPile(player2.warPile.remove(i));
-    				i ++;
-    			}
+    			player1.transferToWinningsPile(player1);
+    			player1.transferToWinningsPile(player2);
     		}
     		else{
     			gameState += "\n Cards go to Player 2";
-    			player2.addToWinningsPile(card1);
-    			player2.addToWinningsPile(card2);
-    			int i = 0;
-    			while (! player1.warPile.isEmpty()) {
-    				player2.addToWinningsPile(player1.warPile.remove(i));
-    				player2.addToWinningsPile(player2.warPile.remove(i));
-    				i ++;
-    			}
+    			player2.transferToWinningsPile(player1);
+    			player2.transferToWinningsPile(player2);
     		}
     }
-    
     
     /**
      * Prints a string indicating the player who won with 

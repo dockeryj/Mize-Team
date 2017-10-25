@@ -12,7 +12,7 @@ public class Player {
 	
 	private List<Card> unplayedPile;
 	private List<Card> winningsPile;
-	public List<Card> warPile;
+	private List<Card> warPile;
 	
     /**
      * Creates a player with empty unplayed pile and winnings pile
@@ -37,12 +37,23 @@ public class Player {
     public void addToWinningsPile(Card card){
     		winningsPile.add(card);
     }
-	
+
     /**
      * Adds card to the players war pile.
      */
     public void addToWarPile(Card card){
     		warPile.add(card);
+    }
+    
+    /**
+     * Adds card to the players winnings pile from war pile.
+     */
+    public void transferToWinningsPile(Player player){
+    		int i = 0;
+    		while (warPile.size() > 0) {
+    			addToWinningsPile(player.warPile.remove(i));
+    			i ++;
+    		}
     }
     
     /**
