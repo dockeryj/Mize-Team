@@ -51,6 +51,7 @@ public class Player {
      */
     public Card getCard(){
     		return unplayedPile.remove(0);
+    		//this needs to be fixed. Index out of bounds exception when there is nothing left in the unplayed pile
     }
     
     /**

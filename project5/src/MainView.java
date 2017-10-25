@@ -9,31 +9,29 @@ import java.awt.event.*;
  */
 public class MainView extends JFrame{
 
-    private WarGame model;
-    private JPanel northPanel = new JPanel();
-    private JPanel playerOneLabelPanel = new JPanel();
     private JPanel gameStatsLabelPanel = new JPanel();
-    private JPanel playerTwoLabelPanel = new JPanel();
-    private JPanel centerPanel = new JPanel();
-    private JPanel southPanel = new JPanel();
     private JButton moveButton = new JButton("Move");
     private JButton newGameButton = new JButton("New Game");
     private Container mainContainer = getContentPane();
     private JTextField statsField = new JTextField("");
     private CardPanel p1Card = new CardPanel();
     private CardPanel p2Card = new CardPanel();
+	private WarGame model;
     
     public MainView(WarGame model){
         this.model = model;
         this.setTitle("Game of War");
         
         // Create the north panel of our border layout
+        JPanel northPanel = new JPanel();
         northPanel.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
+        
         c.weightx = .5;
         c.gridx = 0;
         c.gridy = 0;
+        JPanel playerOneLabelPanel = new JPanel();
         playerOneLabelPanel.add(new JLabel("Player 1"), BorderLayout.CENTER);
         northPanel.add(playerOneLabelPanel, c);
         
@@ -41,19 +39,22 @@ public class MainView extends JFrame{
         c.gridy = 0;
         gameStatsLabelPanel.add(new JLabel("Game Stats"), BorderLayout.CENTER);
         northPanel.add(gameStatsLabelPanel, c);
-       
+        
         c.gridx = 2;
         c.gridy = 0;
+        JPanel playerTwoLabelPanel = new JPanel();
         playerTwoLabelPanel.add(new JLabel("Player 2"), BorderLayout.CENTER);
         northPanel.add(playerTwoLabelPanel, c);
        
         // Create Center Panel
+        JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridLayout(0,3));
         centerPanel.add(p1Card);
         centerPanel.add(statsField);
         centerPanel.add(p2Card);
         
         // Create the South Panel
+        JPanel southPanel = new JPanel();
         southPanel.add(moveButton);
         southPanel.add(newGameButton);
       
@@ -67,10 +68,11 @@ public class MainView extends JFrame{
         newGameButton.addActionListener(new NewGameListener());
         
     }
+    
     private class MoveListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			model.step();
-			System.out.println(model.toString());
+			//System.out.println(model.toString());
 			//p1Card.setCard();
 			//p2Card.setCard();
 			//model.step needs to return in some way a card image to be displayed. Also,
