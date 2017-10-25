@@ -53,10 +53,13 @@ public class WarGame {
     /**
      * Makes one move in the game
      */
-    public void step(){ 
+    public ArrayList<Card> step(){ 
     		moveCount += 1;
     		card1 = player1.getCard();
     		card2 = player2.getCard();
+    		ArrayList<Card> playerCards = new ArrayList<>();
+    		playerCards.add(card1);
+    		playerCards.add(card2);
     		warPile.add(card1);
 		warPile.add(card2);
     		if (card1.getRank() > card2.getRank()) {
@@ -69,6 +72,7 @@ public class WarGame {
     				player2.addToWinningsPile(warPile.remove(0));
     			}
     		}
+    		return playerCards;
     }
     	
     

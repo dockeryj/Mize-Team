@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 /**
  * The main window for dealing from a deck of cards.
@@ -72,23 +73,18 @@ public class MainView extends JFrame{
     
     private class MoveListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			model.step();
+			ArrayList<Card> playerCards = new ArrayList<>();
+			playerCards.addAll(model.step());
 			statsField.setText(model.toString());
-			//Card playerOneCard = player1.getCard();
-			//Card playerTwoCard = player2.getCard();
-			p1Card.setCard(playerOneCard);
-			p2Card.setCard(playerTwoCard);
+			
 		}
 		
 	}
 	
 	private class NewGameListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-<<<<<<< HEAD
-=======
-			
->>>>>>> branch 'master' of https://github.com/dockeryj/Mize-Team.git
-			//this isnt the right method, but can easily be fixed
+			model = new WarGame();
+
 		}
 	}
     
