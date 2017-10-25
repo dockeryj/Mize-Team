@@ -74,8 +74,12 @@ public class MainView extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			model.step();
 			statsField.setText(model.toString());
-			private Card playerOneCard = ;
+			//Card playerOneCard = player1.getCard();
+			//Card playerTwoCard = player2.getCard();
+			p1Card.setCard(playerOneCard);
+			p2Card.setCard(playerTwoCard);
 		}
+		
 	}
 	
 	private class NewGameListener implements ActionListener{
