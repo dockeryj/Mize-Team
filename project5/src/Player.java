@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -63,5 +62,13 @@ public class Player {
      */
     public int winningsCount(){
     		return winningsPile.size();
+    }	
+    
+    /**
+     * Returns the number of cards in the player's winnings pile.
+     * @return the number of cards in player's winnings pile
+     */
+    public int unplayedCount(){
+    		return unplayedPile.size();
     }	
 }

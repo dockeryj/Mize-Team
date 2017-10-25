@@ -43,9 +43,9 @@ public class WarGame {
      * @return gameState
      */
 	public String toString(){
-		statistics1 = String.format("Player 1:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:"); 
-		statistics2 = String.format("Player 2:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:");
-		gameState = statistics1 + lineSpaces + statistics2 + lineSpaces + this.moveCount;
+		statistics1 = String.format("%n Player 1:%nCurrent Card: " + card1 + "%nUnplayed pile: " + player1.unplayedCount()+ "%nWar pile: " + warPile.size() + "%nWinnings pile: " + player1.winningsCount()); 
+		statistics2 = String.format("Player 2:%nCurrent Card: " + card2 + "%nUnplayed pile: " + player2.unplayedCount()+ "%nWar pile: " + warPile.size() + "%nWinnings pile: " + player2.winningsCount()); 
+		gameState = "Move Count: " + this.moveCount + statistics1 + lineSpaces + statistics2 + lineSpaces;
 		return gameState;
 	}
 	
