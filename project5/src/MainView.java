@@ -72,7 +72,7 @@ public class MainView extends JFrame{
     private class MoveListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			model.step();
-			//System.out.println(model.toString());
+			statsField.setText(model.toString());
 			//p1Card.setCard();
 			//p2Card.setCard();
 			//model.step needs to return in some way a card image to be displayed. Also,

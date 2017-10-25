@@ -23,6 +23,7 @@ public class WarGame {
 		player2 = new Player();
 		deck = new Deck();
 		deck.shuffle();	
+		this.deal();
 	}
 	
 	/**
