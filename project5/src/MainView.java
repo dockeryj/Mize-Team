@@ -89,7 +89,6 @@ public class MainView extends JFrame{
 	
 	private class NewGameListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			model.deal();
 			//this isnt the right method, but can easily be fixed
 		}
 	}

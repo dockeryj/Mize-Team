@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -8,11 +9,17 @@ import java.util.List;
 
 public class WarGame {
 
-	private Player player1;
-	private Player player2;
+	public  Player player1;
+	public  Player player2;
 	private Deck deck;
 	private String gameState = "";
-	
+	private List<Card> warPile;
+	private int moveCount = 0;
+	private String statistics1 = "";
+	private String lineSpaces = String.format("%n%n");
+	private String statistics2 = "";
+	private Card card1;
+	private Card card2;
 	
 	/**
      * Creates a war game with 2 players and a shuffled deck
@@ -20,9 +27,14 @@ public class WarGame {
 	public WarGame() {
 		player1 = new Player();
 		player2 = new Player();
+		warPile = new ArrayList<Card>();
 		deck = new Deck();
 		deck.shuffle();	
-		this.deal();
+		while (! deck.isEmpty()){
+			player1.addToUnplayedPile(deck.deal());
+			player2.addToUnplayedPile(deck.deal());
+		}
+		
 	}
 	
 	/**
@@ -30,49 +42,34 @@ public class WarGame {
      * @return gameState
      */
 	public String toString(){
-		String statistics1 = "";
-		String lineSpaces = String.format("%n%n");
-		String statistics2 = "";
 		statistics1 = String.format("Player 1:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:"); 
 		statistics2 = String.format("Player 2:%nCurrent Card:%nUnplayed pile:%nWar pile:%nWinnings pile:");
 		gameState = statistics1 + lineSpaces + statistics2 + lineSpaces + this.moveCount;
 		return gameState;
-	    }
+	}
 	
-	/**
-     * Deals 26 cards to each player.
-     */
-    public void deal(){
-    		while (! deck.isEmpty()){
-    			player1.addToUnplayedPile(deck.deal());
-    			player2.addToUnplayedPile(deck.deal());
-    		}
-    }
 	
     /**
      * Makes one move in the game
-     * return the two cards played
      */
-    public void step(){
-    		Card card1 = player1.getCard();
-    		Card card2 = player2.getCard();
-    		player1.addToWarPile(card1);
-		player2.addToWarPile(card2);
-    		gameState = "Player 1: " + card1.toString() + "\n" + "Player 2: " + card2.toString();
-    		if (card1.getRank() == card2.getRank()) {
-    			gameState += "\n Cards added to war pile";
-    		}
-    		else if (card1.getRank() > card2.getRank()) {
-    			gameState += "\n Cards go to Player 1";
-    			player1.transferToWinningsPile(player1);
-    			player1.transferToWinningsPile(player2);
+    public void step(){ 
+    		moveCount += 1;
+    		card1 = player1.getCard();
+    		card2 = player2.getCard();
+    		warPile.add(card1);
+		warPile.add(card2);
+    		if (card1.getRank() > card2.getRank()) {
+    			while (! warPile.isEmpty()) {
+    				player1.addToWinningsPile(warPile.remove(0));
+    			}
     		}
     		else{
-    			gameState += "\n Cards go to Player 2";
-    			player2.transferToWinningsPile(player1);
-    			player2.transferToWinningsPile(player2);
+    			while (! warPile.isEmpty()) {
+    				player2.addToWinningsPile(warPile.remove(0));
+    			}
     		}
     }
+    	
     
     /**
      * Prints a string indicating the player who won with 
