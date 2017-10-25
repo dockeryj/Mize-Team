@@ -21,6 +21,7 @@ public class WarGame {
 	private Card card1;
 	private Card card2;
 	
+	
 	/**
      * Creates a war game with 2 players and a shuffled deck
      */
