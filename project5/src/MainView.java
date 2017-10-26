@@ -75,7 +75,26 @@ public class MainView extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			ArrayList<Card> playerCards = new ArrayList<>();
 			playerCards.addAll(model.step());
+			Card player1Card = playerCards.get(0);
+			player1Card.turn();
+			Card player2Card = playerCards.get(1);
+			player2Card.turn();
+			p1Card.setCard(player1Card);
+			p2Card.setCard(player2Card);
 			statsField.setText(model.toString());
+			if (model.winner() == 1)
+			{
+				JOptionPane.showMessageDialog(null, "Player One Won!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+			}
+			if (model.winner() == 2)
+			{
+				JOptionPane.showMessageDialog(null, "Player Two Won!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+			}
+			if (model.winner() == 0)
+			{
+				JOptionPane.showMessageDialog(null, "The Game Ended in a Tie!", "Game Over", JOptionPane.INFORMATION_MESSAGE);
+			}
+			
 			
 		}
 		
@@ -84,7 +103,8 @@ public class MainView extends JFrame{
 	private class NewGameListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 			model = new WarGame();
-
+			statsField.setText(model.toString());
+			
 		}
 	}
     
