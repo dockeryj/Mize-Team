@@ -43,9 +43,9 @@ public class WarGame {
      * @return gameState
      */
 	public String toString(){
-		statistics1 = String.format("%n Player 1:%nCurrent Card: " + card1 + "%nUnplayed pile: " + player1.unplayedCount()+ "%nWar pile: " + warPile.size() + "%nWinnings pile: " + player1.winningsCount()); 
+		statistics1 = String.format("Player 1:%nCurrent Card: " + card1 + "%nUnplayed pile: " + player1.unplayedCount()+ "%nWar pile: " + warPile.size() + "%nWinnings pile: " + player1.winningsCount()); 
 		statistics2 = String.format("Player 2:%nCurrent Card: " + card2 + "%nUnplayed pile: " + player2.unplayedCount()+ "%nWar pile: " + warPile.size() + "%nWinnings pile: " + player2.winningsCount()); 
-		gameState = "Move Count: " + this.moveCount + statistics1 + lineSpaces + statistics2 + lineSpaces;
+		gameState = statistics1 + lineSpaces + statistics2 + lineSpaces + "Move Count: " + this.moveCount + ;
 		return gameState;
 	}
 	
@@ -80,19 +80,21 @@ public class WarGame {
      * Prints a string indicating the player who won with 
      * each player's number of cards, or a tie
      */
-    public String winner(){
+    public int winner(){
     		if (player1.isDone() && player2.isDone()) {
     			int count1 = player1.winningsCount();
     			int count2 = player2.winningsCount();
     			if (count1 > count2) {
-    				return("Player 1 wins," + Integer.toString(count1) + "to" + Integer.toString(count2));
+    				System.out.print("Player 1 wins," + Integer.toString(count1) + "to" + Integer.toString(count2));
+    				return(1);
     			}
     			else if (count1 < count2) {
-    				return("Player 2 wins, " + Integer.toString(count2) + " to " + Integer.toString(count1));
+    				System.out.println("Player 2 wins, " + Integer.toString(count2) + " to " + Integer.toString(count1));
+    				return(2);
     			}
-    			else return("The game ends in a tie");
+    			else return(3);
     		}
-    		else return(null);
+    		else return(0);
     }
 	
 }
