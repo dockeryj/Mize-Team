@@ -87,11 +87,11 @@ public class WarGame {
     			int count1 = player1.winningsCount();
     			int count2 = player2.winningsCount();
     			if (count1 > count2) {
-    				System.out.print("Player 1 wins," + Integer.toString(count1) + "to" + Integer.toString(count2));
+    				//System.out.print("Player 1 wins, " + Integer.toString(count1) + "to" + Integer.toString(count2));
     				return(1);
     			}
     			else if (count1 < count2) {
-    				System.out.println("Player 2 wins, " + Integer.toString(count2) + " to " + Integer.toString(count1));
+    				//System.out.println("Player 2 wins, " + Integer.toString(count2) + " to " + Integer.toString(count1));
     				return(2);
     			}
     			else return(0);
