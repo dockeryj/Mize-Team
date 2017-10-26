@@ -21,7 +21,7 @@ public class WarGame {
 	private Card card1;
 	private Card card2;
 	
-	//
+	//Constructor
 	/**
      * Creates a war game with 2 players and a shuffled deck
      */
@@ -52,6 +52,7 @@ public class WarGame {
 	
     /**
      * Makes one move in the game
+     * @return playerCards
      */
     public ArrayList<Card> step(){ 
 	    		moveCount += 1;
@@ -79,6 +80,7 @@ public class WarGame {
     /**
      * Prints a string indicating the player who won with 
      * each player's number of cards, or a tie
+     * @return 1 if player 1 won, 2 if player 2 won, 0 if tie, -1 if game not over
      */
     public int winner(){
     		if (player1.isDone() && player2.isDone()) {
