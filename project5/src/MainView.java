@@ -104,6 +104,9 @@ public class MainView extends JFrame{
 		public void actionPerformed(ActionEvent e) {
 			model = new WarGame();
 			statsField.setText(model.toString());
+			p1Card.setCard(null);
+			p2Card.setCard(null);
+			
 			
 		}
 	}
