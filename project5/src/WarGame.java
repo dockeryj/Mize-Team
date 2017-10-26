@@ -92,9 +92,9 @@ public class WarGame {
     				System.out.println("Player 2 wins, " + Integer.toString(count2) + " to " + Integer.toString(count1));
     				return(2);
     			}
-    			else return(3);
+    			else return(0);
     		}
-    		else return(0);
+    		else return(-1);
     }
 	
 }
