@@ -2,7 +2,7 @@
 
 /**
  * Tests the WarGame Class
- * @author Roby
+ * @author Chris_Surran, Taylor_Dockery, Roby Mize, Cooper Breithaupt
  *
  */
 

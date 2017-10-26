@@ -3,7 +3,7 @@ import java.util.List;
 
 /**
  * Represents a player in a game of war
- * @author Roby
+ * @author Chris_Surran, Taylor_Dockery, Roby Mize, Cooper Breithaupt
  *
  */
 
@@ -42,7 +42,6 @@ public class Player {
      */
     public Card getCard(){
     		return unplayedPile.remove(0);
-    		//this needs to be fixed. Index out of bounds exception when there is nothing left in the unplayed pile
     }
     
     /**
@@ -65,8 +64,8 @@ public class Player {
     }	
     
     /**
-     * Returns the number of cards in the player's winnings pile.
-     * @return the number of cards in player's winnings pile
+     * Returns the number of cards in the player's unplayedCount pile.
+     * @return the number of cards in player's unplayedCount pile
      */
     public int unplayedCount(){
     		return unplayedPile.size();

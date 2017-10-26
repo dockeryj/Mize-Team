@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 /**
  * The main window for dealing from a deck of cards.
- * @author Chris_Surran, Taylor_Dockery
+ * @author Chris_Surran, Taylor_Dockery, Roby Mize, Cooper Breithaupt
  *
  */
 public class MainView extends JFrame{

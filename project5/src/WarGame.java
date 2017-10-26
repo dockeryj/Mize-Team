@@ -3,7 +3,7 @@ import java.util.List;
 
 /**
  * Represents a game of war
- * @author Roby
+ * @author Chris_Surran, Taylor_Dockery, Roby Mize, Cooper Breithaupt
  *
  */
 
