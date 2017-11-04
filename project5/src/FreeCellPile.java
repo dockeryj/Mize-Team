@@ -15,27 +15,5 @@ public class FreeCellPile extends AbstractPile{
      */
 	public FreeCellPile() {
 		super(1);
-	}
-	
-	public void add(Card cardToBeAdded) {
-		if (! freecellpile.isEmpty()) {
-			throw new RuntimeException("Illegal Move!");
-		}
-		else {
-			freecellpile.add(cardToBeAdded);
-		}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 }
