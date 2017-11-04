@@ -28,7 +28,10 @@ public abstract class AbstractPile implements Pile, Iterable<Card>{
 		return (Card)abstractPile.remove(abstractPile.size() - 1);}
 	
 	public boolean transfer(Pile targetPile) {
-		if 
+		if (! canTransfer(targetPile)) return false
+		else{
+			return true
+		}
 	}
 	
 	
