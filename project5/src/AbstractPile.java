@@ -15,6 +15,26 @@ public abstract class AbstractPile implements Pile, Iterable<Card>{
 		abstractPile = new ArrayList<Card>();
 	}
 	
+	public int size(){ 
+		return abstractPile.size();}
+	
+	public void clear(){
+		abstractPile = new ArrayList<Card>();}
+	
+	public void add(Card cardToBeAdded){
+		abstractPile.add(cardToBeAdded);}
+	
+	public Card remove() {
+		return (Card)abstractPile.remove(abstractPile.size() - 1);}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

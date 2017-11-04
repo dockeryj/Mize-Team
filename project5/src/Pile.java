@@ -1,9 +1,9 @@
 import java.util.Iterator;
 public interface Pile {
 	public abstract String toString();
-	public abstract int size();
-	public abstract void clear();
-	public abstract Card add();
+	public abstract int size(); //
+	public abstract void clear(); //
+	public abstract void add(Card cardToBeAdded);
 	public abstract Card remove();
 	public abstract Card transfer(Pile targetPile);
 	public abstract boolean isEmpty();
