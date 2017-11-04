@@ -7,5 +7,5 @@ public interface Pile {
 	public abstract Card remove();
 	public abstract Card transfer(Pile targetPile);
 	public abstract boolean isEmpty();
-	public abstract Iterator<Card> iterator();
+	public abstract Iterator<Card> iterator(); // This is because we will need to iterate through pile to display gui
 }

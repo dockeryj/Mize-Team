@@ -6,6 +6,11 @@
 
 public abstract class AbstractPile implements Pile, Iterable<Card>{
 	
+	public AbstractPile(int size)
+	{
+		
+	}
+	
 	
 	
 	
