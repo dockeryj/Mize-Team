@@ -43,8 +43,7 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 			abstractPile.add(targetPile.remove());
 			return true;
 		}
-	
 	}
-	
-	
+	public boolean isEmpty() {
+		return abstractPile.isEmpty();}	
 }
