@@ -70,9 +70,9 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 		if(i < 0 || (i > maxSize() - 1)) throw new IllegalStateException("Must enter valid index.");
 		return (Card) abstractPile.get(i);
 	}
-	public boolean inOrder(int low, int high) { // remember that size -1 is the top.
+	public boolean inOrder(int low, int high) { 
 		int nextRank = -1;
-		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegalish index");
+		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegal index");
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
 		for(int i = low; i <= high; i++) {
 			Card c = get(i);
@@ -81,7 +81,7 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 				nextRank = c.getRank() - 1;}
 			else { 
 				if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
-				System.out.println("Card: " + c +"; PossibleSuits: " + possibleSuits + "; Next Rank: " + nextRank);
+				//System.out.println("Card: " + c +"; PossibleSuits: " + possibleSuits + "; Next Rank: " + nextRank); used for testing
 				return false;
 				}
 				possibleSuits = getNextSuit(c);
@@ -89,11 +89,11 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 			
 			}
 		}
-		return true; // return true if you make it all the way through the pile
+		return true; 
 	}
 	public ArrayList<Suit> getNextSuit(Card c){
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
-		if ((c.getSuit().equals(Suit.club)) || (c.getSuit().equals(Suit.spade))){ // next card must be red
+		if ((c.getSuit().equals(Suit.club)) || (c.getSuit().equals(Suit.spade))){ 
 			possibleSuits.add(Suit.diamond);
 			possibleSuits.add(Suit.heart);}
 		else {
