@@ -70,4 +70,31 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 		if(i < 0 || (i > maxSize() - 1)) throw new IllegalStateException("Must enter valid index.");
 		return (Card) abstractPile.get(i);
 	}
+	public boolean inOrder(int low, int high) { // remember that size -1 is the top.
+		int nextRank = -1;
+		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegalish index");
+		ArrayList<Suit> possibleSuits = new ArrayList<>();
+		for(int i = low; i <= high; i++) {
+			Card c = get(i);
+			if (nextRank == -1) { // this will only trigger for first card
+				possibleSuits = getNextSuit(c);
+				nextRank = c.getRank() - 1;}
+			else { 
+				if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
+				System.out.println("Card: " + c +"; PossibleSuits: " + possibleSuits + "; Next Rank: " + nextRank);
+				return false;}
+				
+				possibleSuits = getNextSuit(c);
+				nextRank = c.getRank() - 1;}
+		}
+	}
+	public ArrayList<Suit> getNextSuit(Card c){
+		ArrayList<Suit> possibleSuits = new ArrayList<>();
+		if ((c.getSuit().equals(Suit.club)) || (c.getSuit().equals(Suit.spade))){ // next card must be red
+			possibleSuits.add(Suit.diamond);
+			possibleSuits.add(Suit.heart);}
+		else {
+			possibleSuits.add(Suit.club);
+			possibleSuits.add(Suit.spade);}
+		return possibleSuits;}
 }
