@@ -16,8 +16,8 @@ public class Tableau extends AbstractPile{
 		int nextRank = -1;
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
 		for(int i = low; i < high; i++) {
+			Card c = get(i);
 			if (nextRank == -1) { // this will only trigger for first card
-				Card c = get(i);
 				possibleSuits = getNextSuit(c);
 				nextRank = c.getRank() - 1;}
 			

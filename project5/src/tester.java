@@ -3,17 +3,15 @@ public class tester {
 
 	public static void main(String[] args) {
 		FreeCellPile cell = new FreeCellPile();
-		FreeCellPile cell3 = new FreeCellPile();
-		HomeCellPile cell2 = new HomeCellPile();
-		Tableau t1 = new Tableau();
+		FreeCellPile freeCell = new FreeCellPile();
+		HomeCellPile homeCell = new HomeCellPile();
 		for (int i = 1; i < 14; i++) 
 			{
 			Card c = new Card(Suit.club, i);
-			t1.add(c);
-			System.out.println(cell2.transfer(cell));
+			freeCell.add(c);
+			System.out.println(homeCell.transfer(freeCell));
 			}
-		ArrayList<Card> cardsToCheck = new ArrayList<>();
-		for (Card c: t1) cardsToCheck.add(c);
+		System.out.println(homeCell.transfer(freeCell));
 		
 		
 		

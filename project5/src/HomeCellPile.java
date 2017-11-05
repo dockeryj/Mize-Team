@@ -13,9 +13,10 @@ public class HomeCellPile extends AbstractPile{
 	}
 	
 	
-	public boolean canTransfer(Pile sourceFile){
-		Card sourceCard = sourceFile.getTop();
-		if (sourceFile instanceof HomeCellPile) return false;
+	public boolean canTransfer(Pile sourcePile){
+		if (! super.canTransfer(sourcePile)) return false;
+		Card sourceCard = sourcePile.getTop();
+		if (sourcePile instanceof HomeCellPile) return false;
 		else if (isEmpty()) {
 			if (sourceCard.getRank() == 1) return true;
 			else return false;}
