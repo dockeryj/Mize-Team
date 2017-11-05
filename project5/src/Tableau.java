@@ -22,7 +22,9 @@ public class Tableau extends AbstractPile{
 			nextRank = c.getRank() - 1;
 			if (nextRank == -1) { // this will only trigger for first card
 				possibleSuits = getNextSuit(c);
-				nextRank = c.getRank() - 1;}
+				nextRank = c.getRank() - 1;
+				System.out.println("Test!!!!!!!!!!!!!!");}
+				
 			
 			
 			else if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
