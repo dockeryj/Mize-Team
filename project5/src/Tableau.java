@@ -18,7 +18,7 @@ public class Tableau extends AbstractPile{
 		for(Card c: cards) {
 			if (nextRank == -1) { // this will only trigger for first card
 				nextRank = c.getRank() - 1;
-				if ((c.getSuit().equals(Suit.club)) || (c.getSuit().equals(Suit.spade))){
+				if ((c.getSuit().equals(Suit.club)) || (c.getSuit().equals(Suit.spade))){ // next card must be red
 					possibleSuits.clear();
 					possibleSuits.add(Suit.diamond);
 					possibleSuits.add(Suit.heart);
