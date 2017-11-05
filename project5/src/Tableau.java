@@ -14,7 +14,7 @@ public class Tableau extends AbstractPile{
 	
 	public boolean inOrder(int low, int high) { // remember that size -1 is the top.
 		int nextRank = -1;
-		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegal index");
+		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegalish index");
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
 		for(int i = low; i <= high; i++) {
 			Card c = get(i);
