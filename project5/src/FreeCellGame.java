@@ -20,7 +20,7 @@ public class FreeCellGame {
      */
 	
 	public FreeCellGame() {
-		FC1 = new FreeCellPile();
+		FC1 = FC2 = new FreeCellPile();
 		FC2 = new FreeCellPile();
 		FC3 = new FreeCellPile();
 		FC4 = new FreeCellPile();
