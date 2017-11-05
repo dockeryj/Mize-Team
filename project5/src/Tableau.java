@@ -22,7 +22,10 @@ public class Tableau extends AbstractPile{
 				possibleSuits = getNextSuit(c);
 				nextRank = c.getRank() - 1;}
 			
-			else if (!(c.getRank() == nextRank) || !(possibleSuits.contains(c.getSuit()))) return false;
+			else if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
+				System.out.println("Card: " + c +"; PossibleSuits: " + possibleSuits + "; Next Rank: " + nextRank);
+				return false;
+				}
 			}
 		return true; // return true if you make it all the way through the pile
 	}
