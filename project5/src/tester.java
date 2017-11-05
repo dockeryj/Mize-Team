@@ -1,3 +1,9 @@
+/**
+ * A tester program for the game
+ * @author Roby Mize
+ *
+ */
+
 import java.util.ArrayList;
 public class tester {
 
@@ -51,9 +57,18 @@ public class tester {
 		Tableau tableau5 = new Tableau();
 		Card c = new Card(Suit.club, 13);
 		tableau4.add(c);
-		Card f = new Card(Suit.club, 12);
-		Card d = new Card(Suit.club, 11);
-		Card e = new Card(Suit.club, 10);
+		Card d = new Card(Suit.club, 12);
+		Card e = new Card(Suit.club, 11);
+		Card f = new Card(Suit.club, 10);
+		tableau5.add(d);
+		tableau5.add(e);
+		tableau5.add(f);
+		
+		System.out.println(tableau4);
+		System.out.println(tableau5);
+		System.out.println(tableau5.size());
+		tableau4.transfer(tableau5, 0, 2);
+		System.out.println(tableau4);
 		
 		
 	} 
