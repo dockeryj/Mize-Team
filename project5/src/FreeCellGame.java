@@ -8,22 +8,9 @@
 
 public class FreeCellGame {
 	
-	private FreeCellPile FC1;
-	private FreeCellPile FC2;
-	private FreeCellPile FC3;
-	private FreeCellPile FC4;
-	private HomeCellPile HC1;
-	private HomeCellPile HC2;
-	private HomeCellPile HC3;
-	private HomeCellPile HC4;
-	private Tableau T1;
-	private Tableau T2;
-	private Tableau T3;
-	private Tableau T4;
-	private Tableau T5;
-	private Tableau T6;
-	private Tableau T7;
-	private Tableau T8;
+	private FreeCellPile FC1, FC2, FC3, FC4;
+	private HomeCellPile HC1, HC2, HC3, HC4;
+	private Tableau T1, T2, T3, T4, T5, T6, T7, T8;
 	private Deck deck;
 	
 	
