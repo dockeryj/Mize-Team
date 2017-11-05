@@ -82,11 +82,14 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 			else { 
 				if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
 				System.out.println("Card: " + c +"; PossibleSuits: " + possibleSuits + "; Next Rank: " + nextRank);
-				return false;}
-				
+				return false;
+				}
 				possibleSuits = getNextSuit(c);
-				nextRank = c.getRank() - 1;}
+				nextRank = c.getRank() - 1;
+			
+			}
 		}
+		return true; // return true if you make it all the way through the pile
 	}
 	public ArrayList<Suit> getNextSuit(Card c){
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
