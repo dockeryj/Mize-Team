@@ -14,9 +14,9 @@ public class tester {
 		//Testing inOrder
 		System.out.println("Adding the following to ordered Tableau:");
 		Tableau tableau = new Tableau();
-		for (int i = 1; i < 8; i += 2) {
+		for (int i = 8; i > 0; i -= 2) {
 			Card c = new Card(Suit.club, i);
-			Card d = new Card(Suit.heart, i+1);
+			Card d = new Card(Suit.heart, i-1);
 			tableau.add(c);
 			tableau.add(d);
 			System.out.println(c.toString());
@@ -51,9 +51,10 @@ public class tester {
 		Tableau tableau5 = new Tableau();
 		Card c = new Card(Suit.club, 13);
 		tableau4.add(c);
-		Card c = new Card(Suit.club, 12);
+		Card f = new Card(Suit.club, 12);
 		Card d = new Card(Suit.club, 11);
 		Card e = new Card(Suit.club, 10);
+		
 		
 	} 
 
