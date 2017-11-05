@@ -13,19 +13,25 @@ public class Tableau extends AbstractPile{
 	}
 	
 	public boolean inOrder(int low, int high) { // remember that size -1 is the top.
-		int nextRank;
+		int nextRank = -1;
 		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegal index");
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
 		for(int i = low; i <= high; i++) {
 			Card c = get(i);
 			possibleSuits = getNextSuit(c);
 			nextRank = c.getRank() - 1;
-			if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
+			if (nextRank == -1) { // this will only trigger for first card
+				possibleSuits = getNextSuit(c);
+				nextRank = c.getRank() - 1;}
+			
+			
+			else if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
 				System.out.println("Card: " + c +"; PossibleSuits: " + possibleSuits + "; Next Rank: " + nextRank);
 				return false;
 				}
+			
 			}
-		return true; // return true if you make it all the way through the pile 
+		return true; // return true if you make it all the way through the pile
 	}
 
 	public ArrayList<Suit> getNextSuit(Card c){
