@@ -64,11 +64,19 @@ public class tester {
 		tableau5.add(e);
 		tableau5.add(f);
 		
-		System.out.println(tableau4);
-		System.out.println(tableau5);
+		System.out.println("Tableau 4: \n" + tableau4);
+		System.out.println("Tableau 5: \n" + tableau5);
 
 		tableau4.transfer(tableau5, 0, 2);
-		System.out.println(tableau4);
+		System.out.println("Tableau 4 after transfer: \n" + tableau4);
+		System.out.println("Tableau 5 after transfer: \n" + tableau5);
+		Card g = new Card(Suit.club, 2);
+		tableau5.add(g);
+		tableau4.transfer(tableau5, 0, 0);
+		System.out.println("Tableau 4 after transfer: \n" + tableau4);
+		System.out.println("Tableau 5 after transfer: \n" + tableau5);
+		
+		
 		
 		
 	} 

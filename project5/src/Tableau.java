@@ -23,7 +23,7 @@ public class Tableau extends AbstractPile{
 		if (low < 0 || high > sourcePile.size() - 1) throw new IllegalStateException("Illegal!!!! index");
 		if(! canTransfer(sourcePile, low, high)) return false;
 		//ArrayList<Card> cardsToAdd = new ArrayList<>();
-		for (int i = low; i <= high; i++) this.add(sourcePile.remove((sourcePile.size()-1)));
+		for (int i = low; i <= high; i++) this.add(sourcePile.remove(0));
 		//for (Card c: cardsToAdd) this.add(c);
 		return true; // Check to make sure cards are added in order
 	}
