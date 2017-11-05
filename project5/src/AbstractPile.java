@@ -40,31 +40,12 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 		if (isEmpty()) throw new IllegalStateException("Cannot remove from an empty stack.");
 		return (Card)abstractPile.remove(abstractPile.size() - 1);}
 	
-	public boolean canTransfer(Pile targetPile){
-		if (targetPile instanceof HomeCellPile && !(this instanceof HomeCellPile))
-		{
-			Card c = getTop();
-			//System.out.println(c.toString());
-			if (targetPile.isEmpty())
-			{
-				if (c.getRank() == 1) return true;
-				else return false;
-			}
-			Card targetPileCard = targetPile.getTop();
-			Suit targetSuit = targetPileCard.getSuit();
-			int targetRank = targetPileCard.getRank() + 1;
-			Card targetCard = new Card(targetSuit, targetRank);
-			//System.out.println(targetCard);
-			if (c.compareTo(targetCard) == 0) return true;
-			else return false;
-		}
-		else if((size() > 0) && (targetPile.size() < maxSize()) && !(this instanceof HomeCellPile)) return true;
-		else return false;}
-	
-	public boolean transfer(Pile targetPile) {
-		if (! canTransfer(targetPile)) return false;
+	public boolean canTransfer(Pile sourcePile) {
+		return((size() < maxSize()) && (!sourcePile.isEmpty()) && (!(sourcePile instanceof HomeCellPile)));}
+	public boolean transfer(Pile sourcePile) {
+		if (! canTransfer(sourcePile)) return false;
 		else{
-			targetPile.add(remove());
+			abstractPile.add(sourcePile.remove());
 			return true;
 		}
 	}
