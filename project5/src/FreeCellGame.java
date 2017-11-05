@@ -53,4 +53,8 @@ public class FreeCellGame {
 		else return false;
 	}
 	
+	public String toString() {
+		//we will do this tomorrow
+		return "test";
+	}
 }
