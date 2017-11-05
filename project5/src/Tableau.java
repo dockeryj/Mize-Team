@@ -27,5 +27,4 @@ public class Tableau extends AbstractPile{
 		for (int i = low; i <= high; i++) this.add(sourcePile.remove(0));
 		return true; 
 	}
-	
 }

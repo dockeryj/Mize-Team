@@ -9,7 +9,6 @@ import java.util.Iterator;
 
 public abstract class AbstractPile implements Pile, Iterable<Card>
 {
-	
 	private List<Card> abstractPile;
 	private int maxSize; 
 	

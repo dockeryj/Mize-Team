@@ -14,5 +14,4 @@ public interface Pile {
 	public abstract Iterator<Card> iterator(); 
 	public abstract boolean inOrder(int low, int high);
 	public abstract Card get(int i);
-	
 }
