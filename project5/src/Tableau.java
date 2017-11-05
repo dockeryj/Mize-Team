@@ -16,7 +16,7 @@ public class Tableau extends AbstractPile{
 		int nextRank = -1;
 		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegal index");
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
-		for(int i = low; i < high; i++) {
+		for(int i = low; i <= high; i++) {
 			Card c = get(i);
 			if (nextRank == -1) { // this will only trigger for first card
 				possibleSuits = getNextSuit(c);
@@ -39,12 +39,19 @@ public class Tableau extends AbstractPile{
 	}
 	
 	
-	public boolean canTransfer() {
+	public boolean canTransfer(Pile sourcePile, int low, int high) {
+		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegal index");
+		if (! super.canTransfer(sourcePile)) return false;
+		if (! inOrder(low, high)) return false;
 		return true;
 	}
 	
-	public boolean transfer() {
-		return true; 
+	public boolean transfer(Pile sourcePile, int low, int high) {
+		if(! canTransfer(sourcePile, low, high)) return false;
+		//ArrayList<Card> cardsToAdd = new ArrayList<>();
+		for (int i = low; i <= high; i++) this.add(sourcePile.remove(i));
+		//for (Card c: cardsToAdd) this.add(c);
+		return true; // Check to make sure cards are added in order
 	}
 	
 }
