@@ -12,11 +12,12 @@ public class Tableau extends AbstractPile{
 		super(52); // 52 because we do not care if to many cards end up in one pile after start
 	}
 	
-	public boolean inOrder(ArrayList<Card> cards) { // remember that size -1 is the top.
+	public boolean inOrder(int low, int high) { // remember that size -1 is the top.
 		int nextRank = -1;
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
-		for(Card c: cards) {
+		for(int i = low; i < high; i++) {
 			if (nextRank == -1) { // this will only trigger for first card
+				Card c = get(i);
 				possibleSuits = getNextSuit(c);
 				nextRank = c.getRank() - 1;}
 			

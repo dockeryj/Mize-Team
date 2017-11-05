@@ -63,4 +63,8 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 		}
 		return s; 
 	}
+	public Card get(int i) {
+		if(i < 0 || (i > maxSize() - 1)) throw new IllegalStateException("Must enter valid index.");
+		return (Card) abstractPile.get(i);
+	}
 }
