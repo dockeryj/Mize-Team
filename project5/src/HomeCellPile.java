@@ -12,4 +12,8 @@ public class HomeCellPile extends AbstractPile{
 		super(13);
 	}
 	
+	public boolean canTransfer(Pile sourceFile) {
+		
+	}
+	
 }

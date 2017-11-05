@@ -7,8 +7,8 @@ public interface Pile {
 	public abstract void clear(); //
 	public abstract void add(Card cardToBeAdded); //
 	public abstract Card remove(); //
-	public abstract boolean transfer(Pile targetPile); //
-	public abstract boolean canTransfer(Pile targetPile); //
+	public abstract boolean transfer(Pile targetPile); //NEED TO UPDATE THIS
+	public abstract boolean canTransfer(Pile sourcePile); //
 	public abstract boolean isEmpty(); //
 	public abstract Iterator<Card> iterator(); // This is because we will need to iterate through pile to display gui
 }
