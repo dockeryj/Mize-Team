@@ -18,21 +18,19 @@ public class Tableau extends AbstractPile{
 		ArrayList<Suit> possibleSuits = new ArrayList<>();
 		for(int i = low; i <= high; i++) {
 			Card c = get(i);
-			possibleSuits = getNextSuit(c);
-			nextRank = c.getRank() - 1;
 			if (nextRank == -1) { // this will only trigger for first card
 				possibleSuits = getNextSuit(c);
-				nextRank = c.getRank() - 1;
-				System.out.println("Test!!!!!!!!!!!!!!");}
-				
-			
-			
-			else if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
+				nextRank = c.getRank() - 1;}
+			else { 
+				if (!(c.getRank() == nextRank) || (!possibleSuits.contains(c.getSuit()))) {
 				System.out.println("Card: " + c +"; PossibleSuits: " + possibleSuits + "; Next Rank: " + nextRank);
 				return false;
 				}
+				possibleSuits = getNextSuit(c);
+				nextRank = c.getRank() - 1;
 			
 			}
+		}
 		return true; // return true if you make it all the way through the pile
 	}
 
