@@ -9,7 +9,7 @@ public class Tableau extends AbstractPile{
      * Constructor.
      */
 	public Tableau() { 
-		super(52); // 52 because we do not care if to many cards end up in one pile after start
+		super(52); // 52 because we do not care if to many cards end up in one pile after start 
 	}
 	
 	public boolean inOrder(ArrayList<Card> cards) { // remember that size -1 is the top.
