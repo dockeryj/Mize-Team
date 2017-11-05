@@ -46,6 +46,15 @@ public class tester {
 		System.out.println("Expect True: " + tableau.inOrder(0, 2));
 		System.out.println("Expect False: " + tableau2.inOrder(0, 7));
 		System.out.println("Expect False: " + tableau3.inOrder(0, 2));
+		//Testing transfering multiple cards between tableau
+		Tableau tableau4 = new Tableau();
+		Tableau tableau5 = new Tableau();
+		Card c = new Card(Suit.club, 13);
+		tableau4.add(c);
+		Card c = new Card(Suit.club, 12);
+		Card d = new Card(Suit.club, 11);
+		Card e = new Card(Suit.club, 10);
+		
 	} 
 
 }
