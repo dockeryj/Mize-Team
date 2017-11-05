@@ -25,7 +25,7 @@ public class Tableau extends AbstractPile{
 				return false;
 				}
 			}
-		return true; // return true if you make it all the way through the pile
+		return true; // return true if you make it all the way through the pile 
 	}
 
 	public ArrayList<Suit> getNextSuit(Card c){
