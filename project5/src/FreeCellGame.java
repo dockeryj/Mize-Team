@@ -24,6 +24,7 @@ public class FreeCellGame {
 	private Tableau T6;
 	private Tableau T7;
 	private Tableau T8;
+	private Deck deck;
 	
 	
 	//Constructor
@@ -48,8 +49,29 @@ public class FreeCellGame {
 		T6 = new Tableau();
 		T7 = new Tableau();
 		T8 = new Tableau();
-		
+		deck = new Deck();
+		deck.shuffle();
+		while (!deck.isEmpty()) {
+			for (int i = 1; i <= 7; i++) {
+				T1.add(deck.deal());
+				T2.add(deck.deal());
+				T3.add(deck.deal());
+				T4.add(deck.deal());
+			}
+			for (int i = 1; i <= 6; i++) {
+				T5.add(deck.deal());
+				T6.add(deck.deal());
+				T7.add(deck.deal());
+				T8.add(deck.deal());
+			}
+		}
 	}
 	
+	public boolean winner() {
+		if (HC1.size() == 13 && HC2.size() == 13 && HC3.size() == 13 && HC4.size() == 13) {
+			return true;
+		}
+		else return false;
+	}
 	
 }
