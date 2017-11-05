@@ -14,7 +14,7 @@ public class tester {
 			}
 		ArrayList<Card> cardsToCheck = new ArrayList<>();
 		for (Card c: t1) cardsToCheck.add(c);
-		t1.
+		
 		
 		
 	}
