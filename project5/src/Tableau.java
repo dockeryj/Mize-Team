@@ -48,7 +48,7 @@ public class Tableau extends AbstractPile{
 	
 	public boolean canTransfer(Pile sourcePile, int low, int high) {
 		if (! super.canTransfer(sourcePile)) return false;
-		if (! inOrder(low, high)) return false;
+		if (! sourcePile.inOrder(low, high)) return false;
 		return true;
 	}
 	

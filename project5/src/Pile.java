@@ -12,5 +12,6 @@ public interface Pile {
 	public abstract boolean canTransfer(Pile sourcePile); //
 	public abstract boolean isEmpty(); //
 	public abstract Iterator<Card> iterator(); // This is because we will need to iterate through pile to display gui
+	public abstract boolean inOrder(int low, int high);
 	
 }
