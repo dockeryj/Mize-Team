@@ -6,11 +6,12 @@
 
 public class HomeCellPile extends AbstractPile{
 	/**
-     * Constructor.
+     * Constructor for HomeCellPile
      */
 	public HomeCellPile(){
 		super(13);
 	}
+	
 	
 	public boolean canTransfer(Pile sourceFile){
 		Card sourceCard = sourceFile.getTop();
