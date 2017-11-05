@@ -3,7 +3,6 @@
  * @author Chris_Surran
  *
  */
-import java.util.ArrayList;
 public class Tableau extends AbstractPile{
 	/**
      * Constructor.
@@ -16,6 +15,9 @@ public class Tableau extends AbstractPile{
 	public boolean canTransfer(Pile sourcePile, int low, int high) {
 		if (! super.canTransfer(sourcePile)) return false;
 		if (! sourcePile.inOrder(low, high)) return false;
+		Card bottomSourceCard = sourcePile.get(low);
+		Card topCard = this.getTop();
+		if (!getNextSuit(topCard).contains(bottomSourceCard.getSuit()) || !(bottomSourceCard.getRank() == topCard.getRank() - 1)) return false;
 		return true;
 	}
 	
