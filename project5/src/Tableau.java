@@ -47,7 +47,7 @@ public class Tableau extends AbstractPile{
 	
 	
 	public boolean canTransfer(Pile sourcePile, int low, int high) {
-		if (low < 0 || high > size() - 1) throw new IllegalStateException("Illegal index");
+		if (low < 0 || high > sourcePile.size() - 1) throw new IllegalStateException("Illegal index");
 		if (! super.canTransfer(sourcePile)) return false;
 		if (! inOrder(low, high)) return false;
 		return true;
