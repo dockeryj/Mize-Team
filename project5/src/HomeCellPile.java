@@ -6,7 +6,7 @@
 
 public class HomeCellPile extends AbstractPile{
 	/**
-     * Constructor.
+     * Constructor for HomeCellPile
      */
 	public HomeCellPile(){
 		super(13);

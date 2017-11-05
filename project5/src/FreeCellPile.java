@@ -9,7 +9,7 @@ import java.util.*;
 
 public class FreeCellPile extends AbstractPile{
 	/**
-     * Constructor.
+     * Constructor for FreeCellPile.
      */
 	public FreeCellPile() {
 		super(1);
