@@ -2,7 +2,6 @@ import java.util.ArrayList;
 public class tester {
 
 	public static void main(String[] args) {
-		FreeCellPile cell = new FreeCellPile();
 		FreeCellPile freeCell = new FreeCellPile();
 		HomeCellPile homeCell = new HomeCellPile();
 		for (int i = 1; i < 14; i++) 
