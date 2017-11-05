@@ -2,14 +2,12 @@ import java.util.*;
 
 /**
  * Represents a FreeCellPile
- * @author Roby Mize
+ * @author Roby_Mize
+ * @author Chris_Surran
  *
  */
 
 public class FreeCellPile extends AbstractPile{
-	
-	private List<Card> freecellpile;
-	
 	/**
      * Constructor.
      */
