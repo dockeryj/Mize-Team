@@ -55,7 +55,7 @@ public class FreeCellGame {
 		else return false;
 	}
 	
-	//unfinished//
+	//unfinished?
 	public String toString() {
 		String s = "";
 		System.out.println("This is a FreeCell Game. Stats:");
