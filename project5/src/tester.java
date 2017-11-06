@@ -1,7 +1,7 @@
 /**
  * A tester program for the game
  * @author Roby Mize
- *
+ * @author Taylor Dockery
  */
 
 public class tester {
@@ -78,9 +78,10 @@ public class tester {
 		System.out.println("Tableau 5 after transfer (Expect 2 of clubs): \n" + tableau5);
 		
 		
-		System.out.println("testing game.toString()");
+		System.out.println("\nTesting game.toString()");
 		System.out.println(game.toString());
 		
+		System.out.println("_________Test Complete__________");
 	} 
 
 }

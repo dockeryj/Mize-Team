@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * Represents a game of free cell
  * @author Roby Mize
@@ -14,30 +12,16 @@ public class FreeCellGame {
 	private HomeCellPile HC1, HC2, HC3, HC4;
 	private Tableau T1, T2, T3, T4, T5, T6, T7, T8;
 	private Deck deck;
-	//private List<Tableau> tableauArray = new ArrayList<Tableau>(T1,T2,T3,T4,T5,T6,T7,T8);
 	
-	//Constructor
 	/**
+	 * Constructor.
      * Creates a FreeCell game with 2 players and a shuffled deck
      */
 	
 	public FreeCellGame() {
-		FC1 = new FreeCellPile();
-		FC2 = new FreeCellPile();
-		FC3 = new FreeCellPile();
-		FC4 = new FreeCellPile();
-		HC1 = new HomeCellPile();
-		HC2 = new HomeCellPile();
-		HC3 = new HomeCellPile();
-		HC4 = new HomeCellPile();
-		T1 = new Tableau();
-		T2 = new Tableau();
-		T3 = new Tableau();
-		T4 = new Tableau();
-		T5 = new Tableau();
-		T6 = new Tableau();
-		T7 = new Tableau();
-		T8 = new Tableau();
+		FC1 = new FreeCellPile(); FC2 = new FreeCellPile(); FC3 = new FreeCellPile(); FC4 = new FreeCellPile();
+		HC1 = new HomeCellPile(); HC2 = new HomeCellPile(); HC3 = new HomeCellPile(); HC4 = new HomeCellPile();
+		T1 = new Tableau(); T2 = new Tableau(); T3 = new Tableau(); T4 = new Tableau(); T5 = new Tableau(); T6 = new Tableau(); T7 = new Tableau(); T8 = new Tableau();
 		deck = new Deck();
 		deck.shuffle();
 		while (!deck.isEmpty()) {
@@ -67,7 +51,10 @@ public class FreeCellGame {
 		}
 		else return false;
 	}
-	
+	/**
+     * Constructs the string representation of a free cell game.
+     * @return string representation. 
+     */
 	public String toString() {
 		String s = "";
 		System.out.println("This is a FreeCell Game. Cell contents:");

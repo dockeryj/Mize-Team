@@ -11,6 +11,7 @@ public interface Pile {
      * Returns the size of the pile.
      * @return The size of the pile.
      */
+	
 	public abstract int size(); 
 	
 	/**

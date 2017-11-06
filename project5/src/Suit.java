@@ -11,14 +11,17 @@ public class Suit implements Comparable<Suit>{
 	 * Suit for all spades.
 	 */
 	static public final Suit spade   = new Suit(4, "Spades");
+	
 	/**
 	 * Suit for all hearts.
 	 */
     static public final Suit heart   = new Suit(3, "Hearts");   
+    
 	/**
 	 * Suit for all diamonds.
 	 */
     static public final Suit diamond = new Suit(2, "Diamonds");   
+    
 	/**
 	 * Suit for all clubs.
 	 */
@@ -27,6 +30,11 @@ public class Suit implements Comparable<Suit>{
     private int order;
     private String name;
 
+    /** 
+     * Constructs a suit class.
+     * @param ord
+     * @param nm
+     */
     private Suit(int ord, String nm){
         name = nm;
         order = ord;
@@ -34,6 +42,7 @@ public class Suit implements Comparable<Suit>{
 
     /**
      * Compares two suits using their rank ordering.
+     * @param other suit to be compared.
      * @return 0 if equal, less than 0 if less, greater than 0 if greater
      */
     public int compareTo(Suit other){
