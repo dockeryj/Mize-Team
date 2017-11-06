@@ -29,6 +29,7 @@ public class tester {
 			System.out.println(c.toString());
 			System.out.println(d.toString());
 		}
+		
 		System.out.println("Adding the following to unordered Tableau:");
 		Tableau tableau2 = new Tableau();
 		for (int i = 1; i < 8; i += 2) {
@@ -78,7 +79,7 @@ public class tester {
 		System.out.println("Tableau 5 after transfer (Expect 2 of clubs): \n" + tableau5);
 		
 		
-		
+		//unfinished
 		System.out.println(game.toString());
 		
 	} 
