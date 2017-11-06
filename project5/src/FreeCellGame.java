@@ -59,8 +59,7 @@ public class FreeCellGame {
 	public String toString() {
 		String s = "";
 		System.out.println("This is a FreeCell Game. Stats:");
-		s += "T1-- ";
-		System.out.println(T1.toString() + ", ");
+		s += "T1-- " + T1.toString() + ", ";
 		
 		s += "T2-- ";
 		for (Card c2 : T2) {
