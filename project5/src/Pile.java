@@ -7,11 +7,11 @@ public interface Pile {
      * @return String representation. 
      */
 	public abstract String toString();
+	
 	/**
      * Returns the size of the pile.
      * @return The size of the pile.
      */
-	
 	public abstract int size(); 
 	
 	/**
