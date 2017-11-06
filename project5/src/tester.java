@@ -79,7 +79,7 @@ public class tester {
 		System.out.println("Tableau 5 after transfer (Expect 2 of clubs): \n" + tableau5);
 		
 		
-		//unfinished
+		System.out.println("testing game.toString()");
 		System.out.println(game.toString());
 		
 	} 
