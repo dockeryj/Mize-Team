@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 import java.util.Iterator;
+/**
+ * Represents a FreeCellPile
+ * @author Chris_Surran
+ *
+ */
+
 public interface Pile {
 	
 	/**

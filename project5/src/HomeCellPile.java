@@ -1,6 +1,7 @@
 /**
  * Represents a FreeCellPile
  * @author Chris_Surran
+ * @author Cooper_Breithaupt
  *
  */
 

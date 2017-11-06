@@ -70,7 +70,7 @@ public class tester {
 
 		tableau4.transfer(tableau5, 0, 2);
 		System.out.println("Tableau 4 after transfer: \n" + tableau4);
-		System.out.println("Tableau 5 after transfer: \n" + tableau5);
+		System.out.println("Tableau 5 after transfer (Expect empty): \n" + tableau5);
 		Card g = new Card(Suit.club, 2);
 		tableau5.add(g);
 		tableau4.transfer(tableau5, 0, 0);
