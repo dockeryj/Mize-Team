@@ -8,7 +8,7 @@ public class Tableau extends AbstractPile{
      * Constructor.
      */
 	public Tableau() { 
-		super(52); // 52 because we do not care if to many cards end up in one pile after start
+		super(52); // 52 because we do not care if too many cards end up in one pile after start
 	}
 	
 	

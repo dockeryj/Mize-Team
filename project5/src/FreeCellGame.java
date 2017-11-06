@@ -2,6 +2,7 @@
 /**
  * Represents a game of free cell
  * @author Roby Mize
+ * @author Taylor Dockery
  *
  */
 
@@ -54,7 +55,41 @@ public class FreeCellGame {
 	}
 	
 	public String toString() {
-		//we will do this tomorrow
-		return "test";
+		String s = "";
+		System.out.println("This is a FreeCell Game. Stats:");
+		s += "T1--";
+		for (Card c1 : T1) {
+			s += c1.toString();
+		}
+		s += "T2--";
+		for (Card c2 : T2) {
+			s += c2.toString();
+		}
+		s += "\n T3--";
+		for (Card c3 : T3) {
+			s += c3.toString();
+		}
+		s += "\n T4--";
+		for (Card c4 : T4) {
+			s += c4.toString();
+		}
+		s += "\n T5--";
+		for (Card c5 : T5) {
+			s += c5.toString();
+		}
+		s += "\n T6--";
+		for (Card c6 : T6) {
+			s += c6.toString();
+		}
+		s += "\n T7--";
+		for (Card c7 : T7) {
+			s += c7.toString();
+		}
+		s += "\n T8--";
+		for (Card c8 : T8) { 
+			s += c8.toString();
+		}
+		
+		return s;
 	}
 }

@@ -79,7 +79,7 @@ public class tester {
 		
 		
 		
-		
+		System.out.println(game.toString());
 		
 	} 
 
