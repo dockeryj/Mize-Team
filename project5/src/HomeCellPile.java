@@ -13,7 +13,11 @@ public class HomeCellPile extends AbstractPile{
 		super(13);
 	}
 	
-	
+	/**
+     * Determines if a pile can be transferred from a source pile.
+     * @param sourcePile the sourcePile
+     * @return true if pile can be transferred
+     */
 	public boolean canTransfer(Pile sourcePile){
 		if (! super.canTransfer(sourcePile)) return false;
 		Card sourceCard = sourcePile.getTop();
