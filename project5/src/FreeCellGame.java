@@ -17,7 +17,6 @@ public class FreeCellGame {
 	 * Constructor.
      * Creates a FreeCell game with 2 players and a shuffled deck
      */
-	
 	public FreeCellGame() {
 		FC1 = new FreeCellPile(); FC2 = new FreeCellPile(); FC3 = new FreeCellPile(); FC4 = new FreeCellPile();
 		HC1 = new HomeCellPile(); HC2 = new HomeCellPile(); HC3 = new HomeCellPile(); HC4 = new HomeCellPile();
