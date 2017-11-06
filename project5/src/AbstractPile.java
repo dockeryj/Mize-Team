@@ -122,7 +122,7 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 		String s = "";
 		for (Card c: abstractPile)
 		{
-			s+= (c.toString() + "\n");
+			s+= (c.toString() + ", ");
 		}
 		return s; 
 	}

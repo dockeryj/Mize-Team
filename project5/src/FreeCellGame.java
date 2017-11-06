@@ -55,41 +55,25 @@ public class FreeCellGame {
 		else return false;
 	}
 	
-	//unfinished?
 	public String toString() {
 		String s = "";
-		System.out.println("This is a FreeCell Game. Stats:");
-		s += "T1-- " + T1.toString() + ", ";
-		
-		s += "T2-- ";
-		for (Card c2 : T2) {
-			s += c2.toString() + ", ";
-		}
-		s += "\n T3-- ";
-		for (Card c3 : T3) {
-			s += c3.toString() + ", ";
-		}
-		s += "\n T4-- ";
-		for (Card c4 : T4) {
-			s += c4.toString() + ", ";
-		}
-		s += "\n T5-- ";
-		for (Card c5 : T5) {
-			s += c5.toString() + ", ";
-		}
-		s += "\n T6-- ";
-		for (Card c6 : T6) {
-			s += c6.toString() + ", ";
-		}
-		s += "\n T7-- ";
-		for (Card c7 : T7) {
-			s += c7.toString() + ", ";
-		}
-		s += "\n T8-- ";
-		for (Card c8 : T8) { 
-			s += c8.toString() + ", ";
-		}
-		
+		System.out.println("This is a FreeCell Game. Cell contents:");
+		s += "T1-- " + T1.toString() + "\n";
+		s += "T2-- " + T2.toString() + "\n";
+		s += "T3-- " + T3.toString() + "\n";
+		s += "T4-- " + T4.toString() + "\n";
+		s += "T5-- " + T5.toString() + "\n";
+		s += "T6-- " + T6.toString() + "\n";
+		s += "T7-- " + T7.toString() + "\n";
+		s += "T8-- " + T8.toString() + "\n";
+		s += "FC1- " + FC1.toString() + "\n";
+		s += "FC2- " + FC2.toString() + "\n";
+		s += "FC3- " + FC3.toString() + "\n";
+		s += "FC4- " + FC4.toString() + "\n";
+		s += "HC1- " + HC1.toString() + "\n";
+		s += "HC2- " + HC2.toString() + "\n";
+		s += "HC3- " + HC3.toString() + "\n";
+		s += "HC4- " + HC4.toString() + "\n";
 		return s;
 	}
 }
