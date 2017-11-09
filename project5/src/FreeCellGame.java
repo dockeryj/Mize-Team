@@ -4,9 +4,13 @@
  * @author Taylor Dockery
  *
  */
-
+import java.util.*;
 
 public class FreeCellGame {
+	
+	//private List<Tableau> tableaux;
+	//private List<HomeCellPile> homeCells;
+	//private List<FreeCellPile> freeCells;
 	
 	private FreeCellPile FC1, FC2, FC3, FC4;
 	private HomeCellPile HC1, HC2, HC3, HC4;
@@ -18,9 +22,15 @@ public class FreeCellGame {
      * Creates a FreeCell game with 2 players and a shuffled deck
      */
 	public FreeCellGame() {
+		
+		//tableaux = new LinkedList<Tableau>();
+		//homeCells = new LinkedList<HomeCellPile>();
+		//freeCells = new  LinkedList<FreeCellPile>();
+		
 		FC1 = new FreeCellPile(); FC2 = new FreeCellPile(); FC3 = new FreeCellPile(); FC4 = new FreeCellPile();
 		HC1 = new HomeCellPile(); HC2 = new HomeCellPile(); HC3 = new HomeCellPile(); HC4 = new HomeCellPile();
 		T1 = new Tableau(); T2 = new Tableau(); T3 = new Tableau(); T4 = new Tableau(); T5 = new Tableau(); T6 = new Tableau(); T7 = new Tableau(); T8 = new Tableau();
+		
 		deck = new Deck();
 		deck.shuffle();
 		while (!deck.isEmpty()) {
