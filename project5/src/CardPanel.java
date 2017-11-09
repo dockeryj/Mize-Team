@@ -22,7 +22,7 @@ public class CardPanel extends JPanel{
      * @param c the card to display.
      */
     public CardPanel(Card c){
-        setBackground(Color.black);
+        setBackground(new Color(51, 102, 0));
         card = c;
     }
 

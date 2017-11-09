@@ -15,14 +15,14 @@ public class AppView extends JFrame{
     private JButton moveButton = new JButton("Move");
     private JButton newGameButton = new JButton("New Game");
     private Container mainContainer = getContentPane();
-    private CardPanel T1 = new CardPanel();
-    private CardPanel T2 = new CardPanel();
-    private CardPanel T3 = new CardPanel();
-    private CardPanel T4 = new CardPanel();
-    private CardPanel T5 = new CardPanel();
-    private CardPanel T6 = new CardPanel();
-    private CardPanel T7 = new CardPanel();
-    private CardPanel T8 = new CardPanel();
+    private CardPanel T1 = new MultiCardPanel();
+    private CardPanel T2 = new MultiCardPanel();
+    private CardPanel T3 = new MultiCardPanel();
+    private CardPanel T4 = new MultiCardPanel();
+    private CardPanel T5 = new MultiCardPanel();
+    private CardPanel T6 = new MultiCardPanel();
+    private CardPanel T7 = new MultiCardPanel();
+    private CardPanel T8 = new MultiCardPanel();
     private CardPanel H1 = new CardPanel();
     private CardPanel H2 = new CardPanel();
     private CardPanel H3 = new CardPanel();
@@ -57,12 +57,12 @@ public class AppView extends JFrame{
         JPanel freeLabelPanel = new JPanel();
         freeLabelPanel.add(new JLabel("Home Cells"), BorderLayout.CENTER);
         northPanel.add(freeLabelPanel, c);
-       
+      
         
         // Create Cards
         JPanel centerPanel = new JPanel();
-        centerPanel.setBackground(Color.GREEN);
-        centerPanel.setLayout(new GridLayout(0,8));
+        centerPanel.setLayout(new GridLayout(2,8));
+        centerPanel.add(F1);
         centerPanel.add(F1);
         centerPanel.add(F2);
         centerPanel.add(F3);
@@ -72,18 +72,20 @@ public class AppView extends JFrame{
         centerPanel.add(H3);
         centerPanel.add(H4);
         
+        centerPanel.add(T1);
+        centerPanel.add(T2);
+        centerPanel.add(T3);
+        centerPanel.add(T4);
+        centerPanel.add(T5);
+        centerPanel.add(T6);
+        centerPanel.add(T7);
+        centerPanel.add(T8);
+        
         
         // Create the South Panel
         JPanel southPanel = new JPanel();
-        southPanel.setBackground(Color.GREEN);
-        southPanel.add(T1);
-        southPanel.add(T2);
-        southPanel.add(T3);
-        southPanel.add(T4);
-        southPanel.add(T5);
-        southPanel.add(T6);
-        southPanel.add(T7);
-        southPanel.add(T8);
+        southPanel.setLayout(new GridLayout(0,1));
+        southPanel.add(newGameButton);
       
         // Add JPanes to the mainPane
         mainContainer.add(centerPanel, BorderLayout.CENTER);
@@ -91,14 +93,13 @@ public class AppView extends JFrame{
         mainContainer.add(northPanel,BorderLayout.NORTH);   
         
         //adds listeners to buttons
-        
         newGameButton.addActionListener(new NewGameListener());
         
     }
 
 	private class NewGameListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-			return;
+		
 			
 		}
 	}
