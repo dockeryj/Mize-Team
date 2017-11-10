@@ -78,11 +78,12 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 	
 	public String toString(){
 		String s = "";
+		if (isEmpty()) return s;
 		for (Card c: abstractPile)
 		{
 			s+= (c.toString() + ", ");
 		}
-		return s; 
+		return s.substring(0, s.length() - 2); 
 	}
 	
 	

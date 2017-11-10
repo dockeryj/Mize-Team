@@ -8,13 +8,11 @@ import java.util.*;
 
 public class FreeCellGame {
 	
-	//private List<Tableau> tableaux;
-	//private List<HomeCellPile> homeCells;
-	//private List<FreeCellPile> freeCells;
 	
-	private FreeCellPile FC1, FC2, FC3, FC4;
-	private HomeCellPile HC1, HC2, HC3, HC4;
-	private Tableau T1, T2, T3, T4, T5, T6, T7, T8;
+	
+	private ArrayList<Pile> tableaux = new ArrayList<>();
+	private ArrayList<Pile> homeCells = new ArrayList<>();
+	private ArrayList<Pile> freeCells = new ArrayList<>();
 	private Deck deck;
 	
 	/**
@@ -23,30 +21,66 @@ public class FreeCellGame {
      */
 	public FreeCellGame() {
 		
-		//tableaux = new LinkedList<Tableau>();
-		//homeCells = new LinkedList<HomeCellPile>();
-		//freeCells = new  LinkedList<FreeCellPile>();
+		tableaux = new ArrayList<>();
+		homeCells = new ArrayList<>();
+		freeCells = new ArrayList<>();
 		
-		FC1 = new FreeCellPile(); FC2 = new FreeCellPile(); FC3 = new FreeCellPile(); FC4 = new FreeCellPile();
-		HC1 = new HomeCellPile(); HC2 = new HomeCellPile(); HC3 = new HomeCellPile(); HC4 = new HomeCellPile();
-		T1 = new Tableau(); T2 = new Tableau(); T3 = new Tableau(); T4 = new Tableau(); T5 = new Tableau(); T6 = new Tableau(); T7 = new Tableau(); T8 = new Tableau();
+		//Create the piles and assign them to their respective lists
+		for(int i = 0; i < 8; i++) {
+			tableaux.add(new Tableau());
+		}
 		
+		for(int i = 0; i < 4; i++) {
+			homeCells.add(new HomeCellPile());
+			freeCells.add(new FreeCellPile());
+		}
 		deck = new Deck();
 		deck.shuffle();
-		while (!deck.isEmpty()) {
-			for (int i = 1; i <= 7; i++) {
-				T1.add(deck.deal());
-				T2.add(deck.deal());
-				T3.add(deck.deal());
-				T4.add(deck.deal());
-			}
-			for (int i = 1; i <= 6; i++) {
-				T5.add(deck.deal());
-				T6.add(deck.deal());
-				T7.add(deck.deal());
-				T8.add(deck.deal());
-			}
+		// Deal out cards to the tableaus
+		while (!deck.isEmpty())
+		{
+			for (int i = 1; i < 8 ; i++) {
+				for (int j = 1; j <= 4; j++) 
+					getTableau(j).add(deck.deal());}
+			for (int i = 1; i < 7; i++) {
+				for (int j =  5; j <= 8; j++) 
+					getTableau(j).add(deck.deal());}
 		}
+	}
+	
+	
+	/**
+	 * Returns the homeCell pile at a given index. Starts counting from 1.
+	 * @param index
+	 * @throws IllegalStateException
+	 * @return homeCell pile at position index
+	 */
+	public Pile getHomePile(int index){
+		if (index > 4 || index < 1) throw new IllegalStateException("Index must be between 1 and 4");
+		return homeCells.get(index - 1);
+	}
+	
+	
+	/**
+	 * Returns the freeCell pile at a given index. Starts counting from 1.
+	 * @param index
+	 * @throws IllegalStateException
+	 * @return freeCell pile at position index
+	 */
+	public Pile getFreePile(int index) {
+		if (index > 4 || index < 1) throw new IllegalStateException("Index must be between 1 and 4");
+		return freeCells.get(index - 1);
+	}
+	
+	
+	/**
+	 * Returns the tableau pile at a given index. Starts counting from 1
+	 * @param index
+	 * @return tableau pile at a given index
+	 */
+	public Pile getTableau(int index) {
+		if (index > 8 || index < 1) throw new IllegalStateException("Index must be between 1 and 8");
+		return tableaux.get(index - 1);
 	}
 	
 	
@@ -55,34 +89,26 @@ public class FreeCellGame {
      * @return true if winner
      */
 	public boolean winner() {
-		if (HC1.size() == 13 && HC2.size() == 13 && HC3.size() == 13 && HC4.size() == 13) {
-			return true;
-		}
-		else return false;
+		for (Pile homeCell: homeCells) if (homeCell.size() != 13) return false;
+		return true;
 	}
+	
+	
 	/**
      * Constructs the string representation of a free cell game.
      * @return string representation. 
      */
 	public String toString() {
-		String s = "";
-		System.out.println("This is a FreeCell Game. Cell contents:");
-		s += "T1-- " + T1.toString() + "\n";
-		s += "T2-- " + T2.toString() + "\n";
-		s += "T3-- " + T3.toString() + "\n";
-		s += "T4-- " + T4.toString() + "\n";
-		s += "T5-- " + T5.toString() + "\n";
-		s += "T6-- " + T6.toString() + "\n";
-		s += "T7-- " + T7.toString() + "\n";
-		s += "T8-- " + T8.toString() + "\n";
-		s += "FC1- " + FC1.toString() + "\n";
-		s += "FC2- " + FC2.toString() + "\n";
-		s += "FC3- " + FC3.toString() + "\n";
-		s += "FC4- " + FC4.toString() + "\n";
-		s += "HC1- " + HC1.toString() + "\n";
-		s += "HC2- " + HC2.toString() + "\n";
-		s += "HC3- " + HC3.toString() + "\n";
-		s += "HC4- " + HC4.toString() + "\n";
-		return s;
+		String result = "FreeCell Game Contents: ";
+		for (int i = 1; i < 5; i++) {
+			result += String.format("\nHome Cell " + i + ": "  + getHomePile(i));
+		}
+		for (int i = 1; i < 5; i++) {
+			result += String.format("\nFree Cell " + i + ": " + getFreePile(i));
+		}
+		for (int i = 1; i < 9; i++) {
+			result += String.format("\nTableau " + i + ": " + getTableau(i));
+		} 
+		return result;
 	}
 }
