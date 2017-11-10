@@ -15,14 +15,14 @@ public class AppView extends JFrame{
     private JButton moveButton = new JButton("Move");
     private JButton newGameButton = new JButton("New Game");
     private Container mainContainer = getContentPane();
-    private CardPanel T1 = new MultiCardPanel();
-    private CardPanel T2 = new MultiCardPanel();
-    private CardPanel T3 = new MultiCardPanel();
-    private CardPanel T4 = new MultiCardPanel();
-    private CardPanel T5 = new MultiCardPanel();
-    private CardPanel T6 = new MultiCardPanel();
-    private CardPanel T7 = new MultiCardPanel();
-    private CardPanel T8 = new MultiCardPanel();
+    private CardPanel T1 = new CardPanel();
+    private CardPanel T2 = new CardPanel();
+    private CardPanel T3 = new CardPanel();
+    private CardPanel T4 = new CardPanel();
+    private CardPanel T5 = new CardPanel();
+    private CardPanel T6 = new CardPanel();
+    private CardPanel T7 = new CardPanel();
+    private CardPanel T8 = new CardPanel();
     private CardPanel H1 = new CardPanel();
     private CardPanel H2 = new CardPanel();
     private CardPanel H3 = new CardPanel();
@@ -61,7 +61,7 @@ public class AppView extends JFrame{
         
         // Create Cards
         JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new GridLayout(2,8));
+        centerPanel.setLayout(new GridLayout(1,8));
         centerPanel.add(F1);
         centerPanel.add(F1);
         centerPanel.add(F2);
@@ -72,15 +72,18 @@ public class AppView extends JFrame{
         centerPanel.add(H3);
         centerPanel.add(H4);
         
-        centerPanel.add(T1);
-        centerPanel.add(T2);
-        centerPanel.add(T3);
-        centerPanel.add(T4);
-        centerPanel.add(T5);
-        centerPanel.add(T6);
-        centerPanel.add(T7);
-        centerPanel.add(T8);
+        JPanel tableauPanel = new JPanel();
+        tableauPanel.setLayout(new GridLayout());
+        tableauPanel.add(T1);
+        tableauPanel.add(T2);
+        tableauPanel.add(T3);
+        tableauPanel.add(T4);
+        tableauPanel.add(T5);
+        tableauPanel.add(T6);
+        tableauPanel.add(T7);
+        tableauPanel.add(T8);
         
+       
         
         // Create the South Panel
         JPanel southPanel = new JPanel();
