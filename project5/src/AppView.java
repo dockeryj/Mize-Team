@@ -64,7 +64,7 @@ public class AppView extends JFrame{
         northPanel.add(freeLabelPanel, c);
       
         
-        // Create Card panels
+        // Create Card panels (may need to figure out how to pin free cells and home cells to the top?)
         JPanel freePanel = new JPanel();
         freePanel.setLayout(new GridLayout(1,4));
         JPanel homePanel = new JPanel();

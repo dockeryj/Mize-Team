@@ -10,6 +10,7 @@ public class MultiCardPanel extends CardPanel{
 	
 	public MultiCardPanel(List<Card> cards, Graphics g) {
 		int length = cards.size();
+		
 		for (int i = 0; i < length; i++) {
 			//create the panel for the cards
 		}
