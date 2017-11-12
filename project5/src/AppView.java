@@ -15,28 +15,33 @@ public class AppView extends JFrame{
     private JButton moveButton = new JButton("Move");
     private JButton newGameButton = new JButton("New Game");
     private Container mainContainer = getContentPane();
-    private CardPanel T1 = new CardPanel();
-    private CardPanel T2 = new CardPanel();
-    private CardPanel T3 = new CardPanel();
-    private CardPanel T4 = new CardPanel();
-    private CardPanel T5 = new CardPanel();
-    private CardPanel T6 = new CardPanel();
-    private CardPanel T7 = new CardPanel();
-    private CardPanel T8 = new CardPanel();
-    private CardPanel H1 = new CardPanel();
-    private CardPanel H2 = new CardPanel();
-    private CardPanel H3 = new CardPanel();
-    private CardPanel H4 = new CardPanel();
-    private CardPanel F1 = new CardPanel();
-    private CardPanel F2 = new CardPanel();
-    private CardPanel F3 = new CardPanel();
-    private CardPanel F4 = new CardPanel();
+    private ArrayList<CardPanel> tableaux1 = new ArrayList<CardPanel>();
+    private ArrayList<CardPanel> tableaux2 = new ArrayList<CardPanel>();
+    
+	private ArrayList<CardPanel> homeCells = new ArrayList<CardPanel>();
+	private ArrayList<CardPanel> freeCells = new ArrayList<CardPanel>();
+  
+
     
 	private FreeCellGame model;
     
     public AppView(FreeCellGame model){
+    	
         this.model = model;
         this.setTitle("FreeCell");
+        
+        for(int i = 0; i < 4; i++) {
+			homeCells.add(new CardPanel());
+			freeCells.add(new CardPanel());
+		}
+        
+        for(int i = 0; i < 4; i++) {
+			tableaux1.add(new CardPanel());
+			
+		}
+        for(int i = 0; i < 4; i++) {
+        		tableaux2.add(new CardPanel());
+        }
         
         // Create the north panel of our border layout
         JPanel northPanel = new JPanel();
@@ -59,31 +64,38 @@ public class AppView extends JFrame{
         northPanel.add(freeLabelPanel, c);
       
         
-        // Create Cards
+        // Create Card panels
+        JPanel freePanel = new JPanel();
+        freePanel.setLayout(new GridLayout(1,4));
+        JPanel homePanel = new JPanel();
+        homePanel.setLayout(new GridLayout(1,4));
+        JPanel tableauPanel1 = new JPanel();
+        tableauPanel1.setLayout(new GridLayout(1,4));
+        JPanel tableauPanel2 = new JPanel();
+        tableauPanel2.setLayout(new GridLayout(1,4));
+        
         JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new GridLayout(1,8));
-        centerPanel.add(F1);
-        centerPanel.add(F1);
-        centerPanel.add(F2);
-        centerPanel.add(F3);
-        centerPanel.add(F4);
-        centerPanel.add(H1);
-        centerPanel.add(H2);
-        centerPanel.add(H3);
-        centerPanel.add(H4);
-        
-        JPanel tableauPanel = new JPanel();
-        tableauPanel.setLayout(new GridLayout());
-        tableauPanel.add(T1);
-        tableauPanel.add(T2);
-        tableauPanel.add(T3);
-        tableauPanel.add(T4);
-        tableauPanel.add(T5);
-        tableauPanel.add(T6);
-        tableauPanel.add(T7);
-        tableauPanel.add(T8);
-        
-       
+        centerPanel.setLayout(new GridLayout(2,2));
+      
+      
+        for (CardPanel i : homeCells) {
+        		homePanel.add(i);
+        }
+        for (CardPanel i : freeCells) {
+        		freePanel.add(i);	  	
+        }
+        for (CardPanel i : tableaux1) {
+    			tableauPanel1.add(i);
+        }
+        for (CardPanel i : tableaux2) {
+			tableauPanel2.add(i);
+        }
+   
+        //add card panels to center panel
+        centerPanel.add(freePanel);
+        centerPanel.add(homePanel);
+        centerPanel.add(tableauPanel1);
+        centerPanel.add(tableauPanel2);
         
         // Create the South Panel
         JPanel southPanel = new JPanel();
