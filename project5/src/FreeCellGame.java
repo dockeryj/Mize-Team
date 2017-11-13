@@ -8,7 +8,7 @@ import java.util.*;
 
 public class FreeCellGame {
 	
-	
+	private ArrayList<Pile> allPiles = new ArrayList<>();
 	
 	private ArrayList<Pile> tableaux = new ArrayList<>();
 	private ArrayList<Pile> homeCells = new ArrayList<>();
@@ -20,6 +20,8 @@ public class FreeCellGame {
      * Creates a FreeCell game with 2 players and a shuffled deck
      */
 	public FreeCellGame() {
+		
+		allPiles = new ArrayList<Pile>();
 		
 		tableaux = new ArrayList<>();
 		homeCells = new ArrayList<>();
@@ -34,6 +36,7 @@ public class FreeCellGame {
 			homeCells.add(new HomeCellPile());
 			freeCells.add(new FreeCellPile());
 		}
+		
 		deck = new Deck();
 		deck.shuffle();
 		// Deal out cards to the tableaus
@@ -111,4 +114,41 @@ public class FreeCellGame {
 		} 
 		return result;
 	}
+
+
+	/**
+	 * Method used to reset the game.
+	 * @return sets to new game. 
+	 */
+	
+	//Cooper's Code
+	public void newGame(){
+		deck = new Deck();
+			
+		for(Pile c : freeCells)
+			c.clear();
+			
+		for(Pile c : homeCells)
+			c.clear();
+			
+		for(Pile c : tableaux)
+			c.clear();
+			
+			deck.shuffle();
+			
+			this.dealCards();
+			
+		}
+		public void dealCards(){
+			while (!deck.isEmpty())
+			{
+				for (int i = 1; i < 8 ; i++) {
+					for (int j = 1; j <= 4; j++) 
+						getTableau(j).add(deck.deal());}
+				for (int i = 1; i < 7; i++) {
+					for (int j =  5; j <= 8; j++) 
+						getTableau(j).add(deck.deal());}
+			}
+		}
+	
 }
