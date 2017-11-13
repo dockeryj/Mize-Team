@@ -31,9 +31,6 @@ public class FreeCellGame {
 			homeCells.add(new HomeCellPile());
 			freeCells.add(new FreeCellPile());
 		}
-		
-		deck = new Deck();
-		deck.shuffle();
 		// Deal out cards to the tableaus
 		reset();
 	}
