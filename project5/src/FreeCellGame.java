@@ -37,15 +37,7 @@ public class FreeCellGame {
 		deck = new Deck();
 		deck.shuffle();
 		// Deal out cards to the tableaus
-		while (!deck.isEmpty())
-		{
-			for (int i = 1; i < 8 ; i++) {
-				for (int j = 1; j <= 4; j++) 
-					getTableau(j).add(deck.deal());}
-			for (int i = 1; i < 7; i++) {
-				for (int j =  5; j <= 8; j++) 
-					getTableau(j).add(deck.deal());}
-		}
+		reset();
 	}
 	
 	
@@ -58,6 +50,30 @@ public class FreeCellGame {
 	public Pile getHomePile(int index){
 		if (index > 4 || index < 1) throw new IllegalStateException("Index must be between 1 and 4");
 		return homeCells.get(index - 1);
+	}
+	
+	public void reset() {
+		Deck deck = new Deck();
+		deck.shuffle();
+		for (Pile p: homeCells) {
+			p.clear();
+		}
+		for (Pile p: freeCells) {
+			p.clear();
+		}
+		for (Pile p: tableaux) {
+			p.clear();
+		}
+		while (!deck.isEmpty())
+		{
+			for (int i = 1; i < 8 ; i++) {
+				for (int j = 1; j <= 4; j++) 
+					getTableau(j).add(deck.deal());}
+			for (int i = 1; i < 7; i++) {
+				for (int j =  5; j <= 8; j++) 
+					getTableau(j).add(deck.deal());}
+		}
+		
 	}
 	
 	

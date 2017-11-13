@@ -32,7 +32,7 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 	
 	
 	public void clear(){
-		abstractPile = new ArrayList<Card>();}
+		abstractPile.clear();}
 	
 	
 	
