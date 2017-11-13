@@ -145,7 +145,7 @@ public class AppView extends JFrame{
 
 	private class NewGameListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
-		
+			
 			
 		}
 	}
