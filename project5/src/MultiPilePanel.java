@@ -2,7 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 /**
  * Panel used by all Tableaux. Can all cards from any given pile.
- * @author chris
+ * @author Chris_Surran
  *
  */
 public class MultiPilePanel extends AbstractPilePanel{
