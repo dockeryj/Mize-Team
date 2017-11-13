@@ -20,7 +20,7 @@ public class MultiPilePanel extends AbstractPilePanel{
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
-		// Draw the wireframe if their is no card
+		// Draw the wireframe if there is no card
 		
 		int y = 0;
 		if (pile.isEmpty() || pile == null){
