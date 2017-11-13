@@ -8,8 +8,6 @@ import java.util.*;
 
 public class FreeCellGame {
 	
-	private ArrayList<Pile> allPiles = new ArrayList<>();
-	
 	private ArrayList<Pile> tableaux = new ArrayList<>();
 	private ArrayList<Pile> homeCells = new ArrayList<>();
 	private ArrayList<Pile> freeCells = new ArrayList<>();
