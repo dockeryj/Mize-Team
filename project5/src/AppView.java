@@ -17,12 +17,6 @@ public class AppView extends JFrame{
     private Container mainContainer = getContentPane();
     private ArrayList<CardPanel> tableaux1 = new ArrayList<CardPanel>();
     private ArrayList<CardPanel> tableaux2 = new ArrayList<CardPanel>();
-    private ArrayList<CardPanel> tableaux3 = new ArrayList<CardPanel>();
-    private ArrayList<CardPanel> tableaux4 = new ArrayList<CardPanel>();
-    private ArrayList<CardPanel> tableaux5 = new ArrayList<CardPanel>();
-    private ArrayList<CardPanel> tableaux6 = new ArrayList<CardPanel>();
-    private ArrayList<CardPanel> tableaux7 = new ArrayList<CardPanel>();
-    private ArrayList<CardPanel> tableaux8 = new ArrayList<CardPanel>();
 	private ArrayList<CardPanel> homeCells = new ArrayList<CardPanel>();
 	private ArrayList<CardPanel> freeCells = new ArrayList<CardPanel>();
 	private FreeCellGame freeCellGame = new FreeCellGame();
@@ -33,26 +27,15 @@ public class AppView extends JFrame{
         this.setTitle("FreeCell");
         
         freeCellGame.reset();
-        
-        
+     
         
         for(int i = 0; i < 4; i++) {
 			homeCells.add(new CardPanel());
 			freeCells.add(new CardPanel());
-		}
-        
-        for(int i = 0; i < 7; i++) {
 			tableaux1.add(new CardPanel());
 			tableaux2.add(new CardPanel());
-			tableaux3.add(new CardPanel());
-			tableaux4.add(new CardPanel());
 		}
-        for(int i = 0; i < 8; i++) {
-        		tableaux5.add(new CardPanel());
-        		tableaux6.add(new CardPanel());
-        		tableaux7.add(new CardPanel());
-        		tableaux8.add(new CardPanel());
-        }
+        
         
         // Create the north panel of our border layout
         JPanel northPanel = new JPanel();
@@ -78,63 +61,50 @@ public class AppView extends JFrame{
         // Create Card panels (may need to figure out how to pin free cells and home cells to the top?)
         JPanel freePanel = new JPanel();
         freePanel.setLayout(new GridLayout(1,4));
+        
         JPanel homePanel = new JPanel();
         homePanel.setLayout(new GridLayout(1,4));
+            
         JPanel tableauPanel1 = new JPanel();
+        tableauPanel1.setLayout(new GridLayout(1,4));
         
-        tableauPanel1.setLayout(new GridLayout(8,2));
         JPanel tableauPanel2 = new JPanel();
-        tableauPanel2.setLayout(new GridLayout(8,2));
-
+        tableauPanel2.setLayout(new GridLayout(1,4));
+        
         
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridLayout(2,2));
-      
-      
+        
         for (CardPanel i : homeCells) {
         		homePanel.add(i);
         }
         for (CardPanel i : freeCells) {
         		freePanel.add(i);	  	
-        		
         }
         for (CardPanel i : tableaux1) {
     			tableauPanel1.add(i);
         }
         for (CardPanel i : tableaux2) {
-			tableauPanel1.add(i);
-        }
-        for (CardPanel i : tableaux3) {
-			tableauPanel1.add(i);
-        }
-        for (CardPanel i : tableaux4) {
-			tableauPanel1.add(i);
-        }
-        for (CardPanel i : tableaux5) {
 			tableauPanel2.add(i);
+			
         }
-        for (CardPanel i : tableaux6) {
-        		tableauPanel2.add(i);
-        }
-        for (CardPanel i : tableaux7) {
-        		tableauPanel2.add(i);
-        	}
-        for (CardPanel i : tableaux8) {
-        		tableauPanel2.add(i);
-        }
+        
       
         //add card panels to center panel
-        centerPanel.add(freePanel);
-        centerPanel.add(homePanel);
+        centerPanel.setBackground(new Color(51, 102, 0));
+        centerPanel.add(freePanel);    
+        centerPanel.add(homePanel); 
         centerPanel.add(tableauPanel1);
         centerPanel.add(tableauPanel2);
         
+       
         // Create the South Panel
         JPanel southPanel = new JPanel();
         southPanel.setLayout(new GridLayout(0,1));
         southPanel.add(newGameButton);
         
         // Add JPanes to the mainPane
+        mainContainer.setBackground(new Color(51, 102, 0));
         mainContainer.add(centerPanel, BorderLayout.CENTER);
         mainContainer.add(southPanel, BorderLayout.SOUTH);
         mainContainer.add(northPanel,BorderLayout.NORTH);   
