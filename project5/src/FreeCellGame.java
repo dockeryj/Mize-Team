@@ -18,9 +18,6 @@ public class FreeCellGame {
      * Creates a FreeCell game with 2 players and a shuffled deck
      */
 	public FreeCellGame() {
-		
-		allPiles = new ArrayList<Pile>();
-		
 		tableaux = new ArrayList<>();
 		homeCells = new ArrayList<>();
 		freeCells = new ArrayList<>();
@@ -134,7 +131,6 @@ public class FreeCellGame {
 	 * Method used to reset the game.
 	 * @return sets to new game. 
 	 */
-	
 		public void dealCards(){
 			while (!deck.isEmpty())
 			{
