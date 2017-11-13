@@ -61,12 +61,17 @@ public class FreeCellGame {
 		}
 		while (!deck.isEmpty())
 		{
+			Card card;
 			for (int i = 1; i < 8 ; i++) {
-				for (int j = 1; j <= 4; j++) 
-					getTableau(j).add(deck.deal());}
+				for (int j = 1; j <= 4; j++){
+					card = deck.deal(); 
+					card.turn();
+					getTableau(j).add(card);}}
 			for (int i = 1; i < 7; i++) {
-				for (int j =  5; j <= 8; j++) 
-					getTableau(j).add(deck.deal());}
+				for (int j =  5; j <= 8; j++) { 
+					card = deck.deal(); 
+					card.turn();
+					getTableau(j).add(card);}}
 		}
 		
 	}
