@@ -1,6 +1,9 @@
 import javax.swing.JFrame;
 
-//just includes a main method to run the application
+/**
+ * Contains a GUI based Free Cell Game. 
+ * @author Chris_Surran, Taylor_Dockery, Roby_Mize, Cooper_Breithaupt
+ */
 public class FreeCellApp {
 
     public static void main(String[] args){

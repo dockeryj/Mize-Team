@@ -1,13 +1,23 @@
 import java.awt.*;
 import javax.swing.*;
 
-
+/**
+ * Panel that represents any pile that holds only one card.
+ * @author Chris_Surran
+ *
+ */
 public class SinglePilePanel extends AbstractPilePanel{
-	
+	/**
+	 * Constructor for SinglePilePanel
+	 * @param p pile the panel represents
+	 */
 	public SinglePilePanel(Pile p) {
 		super(p);
 	}
 	
+	/**
+	 * Draws the panel.
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		

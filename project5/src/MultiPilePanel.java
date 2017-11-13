@@ -1,12 +1,22 @@
 import java.awt.*;
 import javax.swing.*;
-
+/**
+ * Panel used by all Tableaux. Can all cards from any given pile.
+ * @author chris
+ *
+ */
 public class MultiPilePanel extends AbstractPilePanel{
-	
+	/**
+	 * Constructor for MultPilePanel
+	 * @param p pile the panel is representing
+	 */
 	public MultiPilePanel(Pile p) {
 		super(p);
 	}
 	
+	/**
+	 * Draws the panel in its current state
+	 */
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		
