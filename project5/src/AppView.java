@@ -25,15 +25,16 @@ public class AppView extends JFrame{
     private ArrayList<CardPanel> tableaux8 = new ArrayList<CardPanel>();
 	private ArrayList<CardPanel> homeCells = new ArrayList<CardPanel>();
 	private ArrayList<CardPanel> freeCells = new ArrayList<CardPanel>();
-  
-
-    
-	private FreeCellGame model;
-    
-    public AppView(FreeCellGame model){
-    	
-        this.model = model;
+	private FreeCellGame freeCellGame = new FreeCellGame();
+   
+	public AppView(FreeCellGame freeCellGame)
+	{
+    		//Set the title of the window
         this.setTitle("FreeCell");
+        
+        freeCellGame.reset();
+        
+        
         
         for(int i = 0; i < 4; i++) {
 			homeCells.add(new CardPanel());
@@ -139,7 +140,7 @@ public class AppView extends JFrame{
         mainContainer.add(northPanel,BorderLayout.NORTH);   
         
         //adds listeners to buttons
-        newGameButton.addActionListener(new NewGameListener());
+        //newGameButton.addActionListener(new NewGameListener());
         
     }
 
