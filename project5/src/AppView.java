@@ -1,4 +1,3 @@
-//instantiates the model and the view. Needs a NEW GAME button and listener
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
