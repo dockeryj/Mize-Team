@@ -137,24 +137,6 @@ public class FreeCellGame {
 	 * @return sets to new game. 
 	 */
 	
-	//Cooper's Code
-	public void newGame(){
-		deck = new Deck();
-			
-		for(Pile c : freeCells)
-			c.clear();
-			
-		for(Pile c : homeCells)
-			c.clear();
-			
-		for(Pile c : tableaux)
-			c.clear();
-			
-			deck.shuffle();
-			
-			this.dealCards();
-			
-		}
 		public void dealCards(){
 			while (!deck.isEmpty())
 			{
