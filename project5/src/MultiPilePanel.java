@@ -35,7 +35,7 @@ public class MultiPilePanel extends AbstractPilePanel{
 				Icon image = pile.get(i).getImage();
 		    		int x = (getWidth() - image.getIconWidth()) / 2;
 		    		image.paintIcon(this, g, x, y);
-		    		y += 20;
+		    		y += 25;
 			}
 	    		
 	    	}
