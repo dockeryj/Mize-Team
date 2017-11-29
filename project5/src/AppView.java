@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 
+
 /**
  * The main window for dealing from a deck of cards.
  * @author Chris_Surran, Taylor_Dockery, Roby_Mize, Cooper_Breithaupt
@@ -16,9 +17,11 @@ public class AppView extends JFrame{
 	private ArrayList<SinglePilePanel> freeCells = new ArrayList<>();
 	private ArrayList<SinglePilePanel> homeCells = new ArrayList<>();
 	private FreeCellGame model;
-   
-	public AppView(FreeCellGame freeCellGame)
-	{
+
+	private Panel sourcePanel;
+	
+	public AppView(FreeCellGame freeCellGame){
+		
     		//Set the title of the window
         this.setTitle("FreeCell");
         //System.out.println(freeCellGame); USED FOR TESTING
@@ -28,10 +31,10 @@ public class AppView extends JFrame{
         
         // Fill the panels with the piles from the model
         for(int i = 1; i < 5; i++) {
-			homeCells.add(new SinglePilePanel(freeCellGame.getHomePile(i)));
-			freeCells.add(new SinglePilePanel(freeCellGame.getFreePile(i)));
-			tableaux1.add(new MultiPilePanel(freeCellGame.getTableau(i)));
-			tableaux2.add(new MultiPilePanel(freeCellGame.getTableau(i + 4)));
+			homeCells.add(new SinglePilePanel(freeCellGame.getHomePile(i, new PanelPressed())));
+			freeCells.add(new SinglePilePanel(freeCellGame.getFreePile(i, new PanelPressed())));
+			tableaux1.add(new MultiPilePanel(freeCellGame.getTableau(i, new PanelPressed())));
+			tableaux2.add(new MultiPilePanel(freeCellGame.getTableau(i + 4), new PanelPressed()));
 		}
         
         
@@ -71,7 +74,22 @@ public class AppView extends JFrame{
 			tableauPanel2.add(i);
         }
         
-      
+        for(SinglePilePanel i : homeCells) {
+        		i.addMouseListener(new CardMoveListener());
+        }
+        
+        for(SinglePilePanel i : freeCells) {
+    			i.addMouseListener(new CardMoveListener());		
+        }
+        
+        for(MultiPilePanel i : tableaux1) {
+    			i.addMouseListener(new CardMoveListener());
+        }
+        
+        for(MultiPilePanel i : tableaux2) {
+    			i.addMouseListener(new CardMoveListener());
+        }
+        
         // Create center panel and add cards to it. 
         JPanel centerPanel = new JPanel();
         centerPanel.setLayout(new GridLayout(2,2));
@@ -88,11 +106,15 @@ public class AppView extends JFrame{
         southPanel.add(newGameButton);
         newGameButton.addActionListener(new NewGameListener());
         
+        
         // Add north south and center panel to border layout (main container)
         mainContainer.setBackground(new Color(51, 102, 0));
         mainContainer.add(centerPanel, BorderLayout.CENTER);
         mainContainer.add(southPanel, BorderLayout.SOUTH);
-        mainContainer.add(northPanel,BorderLayout.NORTH);  
+        mainContainer.add(northPanel,BorderLayout.NORTH);
+        
+        
+        
     }
 	
 	/**
@@ -105,5 +127,50 @@ public class AppView extends JFrame{
 		repaint();
 		}
 	}
-    
+	
+	
+	public class PanelPressed{
+		private PanelPressed(Panel i){
+			if (sourcePanel == null) {
+				sourcePanel = i;
+			}
+			else {
+				i.transfer(sourcePanel.getCell());
+				sourcePanel = null;
+			}
+		}
+	}
+	
+	public class CardMoveListener implements MouseListener{
+		public void mouseClicked(MouseEvent e) {
+			PanelPressed(e);
+		}
+			
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
 }
+
+
