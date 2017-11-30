@@ -99,6 +99,10 @@ public class FreeCellGame {
 		return tableaux.get(index - 1);
 	}
 	
+	public boolean move(Pile x, Pile y) {
+		x.transfer(y);
+		return true;
+	}
 	
     /**
      * Tests the game for a winner

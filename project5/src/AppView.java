@@ -115,6 +115,9 @@ public class AppView extends JFrame{
         mainContainer.add(northPanel,BorderLayout.NORTH);
 	}
 	
+	/**
+	 * Controller for the game model
+	 */
 	public class ViewInformer{
 		private ViewInformer(){
 		}
@@ -123,12 +126,11 @@ public class AppView extends JFrame{
 				sourcePanel = i;
 			}
 			else {
-				///i.transfer(sourcePanel.getCell());
+				model.move(sourcePanel.getCell(), i.getCell());
+				repaint();
 				sourcePanel = null;
-				//move
 			}
-			repaint();
-	}
+		}
 	}
 	/**
 	 * simple button listener that creates a new game when called upon
@@ -140,8 +142,9 @@ public class AppView extends JFrame{
 		repaint();
 		}
 	}
-	
-	
+	/**
+	 * Creates the listener for the mouse click
+	 */
 	public class CardMoveListener implements MouseListener{
 		private AbstractPilePanel currentPanel;
 		private CardMoveListener(AbstractPilePanel i) {
@@ -150,6 +153,7 @@ public class AppView extends JFrame{
 	
 		public void mouseClicked(MouseEvent e) {
 			informer.PanelPressed(currentPanel);
+			System.out.println("CurrentPanel: " + currentPanel + "sourcePanel: " +sourcePanel);
 		}
 		
 		@Override

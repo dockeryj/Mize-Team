@@ -24,10 +24,7 @@ public class AbstractPilePanel extends JPanel{
 	public void PaintCompoenent(Graphics g) {
 		super.paintComponent(g);	
 	}
-	
-	// This Class will most likely be where we add our methods to respond to mouse
-	// clicks
-	
+
 	public Pile getCell() {
 		return pile;
 	}
