@@ -18,8 +18,7 @@ public class AppView extends JFrame{
 	private ArrayList<SinglePilePanel> homeCells = new ArrayList<>();
 	private FreeCellGame model;
 	private ViewInformer informer;
-	
-	private Panel sourcePanel;
+	private AbstractPilePanel sourcePanel;
 	
 	public AppView(FreeCellGame freeCellGame){
 		
@@ -119,7 +118,7 @@ public class AppView extends JFrame{
 	public class ViewInformer{
 		private ViewInformer(){
 		}
-		private void PanelPressed(Panel i){
+		public void PanelPressed(AbstractPilePanel i){
 			if (sourcePanel == null) {
 				sourcePanel = i;
 			}
@@ -144,13 +143,13 @@ public class AppView extends JFrame{
 	
 	
 	public class CardMoveListener implements MouseListener{
-		private Panel currentPanel;
+		private AbstractPilePanel currentPanel;
 		private CardMoveListener(AbstractPilePanel i) {
 			currentPanel = i;
 		}
 	
 		public void mouseClicked(MouseEvent e) {
-			//abstract panel. this
+			informer.PanelPressed(currentPanel);
 		}
 		
 		@Override
