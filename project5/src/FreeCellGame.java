@@ -100,8 +100,13 @@ public class FreeCellGame {
 	}
 	
 	public boolean move(Pile x, Pile y) {
-		x.transfer(y);
-		return true;
+		if (x.canTransfer(y)) {
+			x.transfer(y);
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
     /**

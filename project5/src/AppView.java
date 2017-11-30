@@ -126,12 +126,18 @@ public class AppView extends JFrame{
 				sourcePanel = i;
 			}
 			else {
+				//need a try catch here with model.move
 				model.move(sourcePanel.getCell(), i.getCell());
 				repaint();
 				sourcePanel = null;
+				if (model.winner()) {
+					//some sort of winning message
+					//some sort of quit and restart type of thing
+				}
 			}
 		}
 	}
+	
 	/**
 	 * simple button listener that creates a new game when called upon
 	 */
