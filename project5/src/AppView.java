@@ -31,10 +31,10 @@ public class AppView extends JFrame{
         
         // Fill the panels with the piles from the model
         for(int i = 1; i < 5; i++) {
-			homeCells.add(new SinglePilePanel(freeCellGame.getHomePile(i, new PanelPressed())));
-			freeCells.add(new SinglePilePanel(freeCellGame.getFreePile(i, new PanelPressed())));
-			tableaux1.add(new MultiPilePanel(freeCellGame.getTableau(i, new PanelPressed())));
-			tableaux2.add(new MultiPilePanel(freeCellGame.getTableau(i + 4), new PanelPressed()));
+			homeCells.add(new SinglePilePanel(freeCellGame.getHomePile(i, PanelPressed())));
+			freeCells.add(new SinglePilePanel(freeCellGame.getFreePile(i, PanelPressed())));
+			tableaux1.add(new MultiPilePanel(freeCellGame.getTableau(i, PanelPressed())));
+			tableaux2.add(new MultiPilePanel(freeCellGame.getTableau(i + 4), PanelPressed()));
 		}
         
         
@@ -138,6 +138,7 @@ public class AppView extends JFrame{
 				i.transfer(sourcePanel.getCell());
 				sourcePanel = null;
 			}
+			repaint();
 		}
 	}
 	

@@ -32,5 +32,8 @@ public class AbstractPilePanel extends JPanel{
 		return pile.getTop();
 	}
 	
+	public void transfer() {
+		
+	}
 	
 }
