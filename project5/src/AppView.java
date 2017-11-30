@@ -140,6 +140,8 @@ public class AppView extends JFrame{
 			}
 			repaint();
 		}
+		
+		
 	}
 	
 	public class CardMoveListener implements MouseListener{
