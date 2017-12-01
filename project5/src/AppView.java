@@ -33,10 +33,10 @@ public class AppView extends JFrame{
         
         // Fill the panels with the piles from the model
         for(int i = 1; i < 5; i++) {
-			homeCells.add(new SinglePilePanel(freeCellGame.getHomePile(i), informer));
-			freeCells.add(new SinglePilePanel(freeCellGame.getFreePile(i), informer));
-			tableaux1.add(new MultiPilePanel(freeCellGame.getTableau(i), informer));
-			tableaux2.add(new MultiPilePanel(freeCellGame.getTableau(i + 4), informer));
+			homeCells.add(new SinglePilePanel(freeCellGame.getHomePile(i)));
+			freeCells.add(new SinglePilePanel(freeCellGame.getFreePile(i)));
+			tableaux1.add(new MultiPilePanel(freeCellGame.getTableau(i)));
+			tableaux2.add(new MultiPilePanel(freeCellGame.getTableau(i + 4)));
 		}
         
         // Create the north panel of border layout. Contains labels for Home/Free Cells
@@ -170,13 +170,13 @@ public class AppView extends JFrame{
 		}
 	
 		public void mouseClicked(MouseEvent e) {
-			informer.PanelPressed(currentPanel);
-			System.out.println("CurrentPanel: " + currentPanel.getCell().getTop());
+			
 		}
 		
 		@Override
 		public void mousePressed(MouseEvent e) {
-			// TODO Auto-generated method stub
+			informer.PanelPressed(currentPanel);
+			System.out.println("CurrentPanel: " + currentPanel.getCell().getTop());
 			
 		}
 

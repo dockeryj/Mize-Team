@@ -7,16 +7,14 @@ import java.awt.*;
  */
 public class AbstractPilePanel extends JPanel{
 	protected Pile pile; 
-	public Object viewController;
 	
 	/**
 	 * Constructor for AbstractPilePanel
 	 * @param p pile the panel represents
 	 */
-	public AbstractPilePanel(Pile p, Object i) {
+	public AbstractPilePanel(Pile p) {
 		pile = p;
 		setBackground(new Color(51, 102, 0));
-		viewController = i;
 	}
 	/**
 	 * Draws the panel.

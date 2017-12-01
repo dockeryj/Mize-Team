@@ -11,8 +11,8 @@ public class SinglePilePanel extends AbstractPilePanel{
 	 * Constructor for SinglePilePanel
 	 * @param p pile the panel represents
 	 */
-	public SinglePilePanel(Pile p, Object i) {
-		super(p, i);
+	public SinglePilePanel(Pile p) {
+		super(p);
 	}
 	
 	/**

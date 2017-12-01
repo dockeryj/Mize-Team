@@ -10,8 +10,8 @@ public class MultiPilePanel extends AbstractPilePanel{
 	 * Constructor for MultPilePanel
 	 * @param p pile the panel is representing
 	 */
-	public MultiPilePanel(Pile p, Object i) {
-		super(p, i);
+	public MultiPilePanel(Pile p) {
+		super(p);
 	}
 	
 	/**
@@ -35,7 +35,7 @@ public class MultiPilePanel extends AbstractPilePanel{
 				Icon image = pile.get(i).getImage();
 		    		int x = (getWidth() - image.getIconWidth()) / 2;
 		    		image.paintIcon(this, g, x, y);
-		    		y += 25;
+		    		y += 33;
 			}
 	    		
 	    	}
