@@ -23,7 +23,7 @@ public class Tableau extends AbstractPile{
 		if (! super.canTransfer(sourcePile)) return false;
 		if (! sourcePile.inOrder(low, high)) return false;
 		Card bottomSourceCard = sourcePile.get(low);
-		Card topCard = this.getTop(); 
+		Card topCard = this.getTop();
 		if (!getNextSuit(topCard).contains(bottomSourceCard.getSuit()) || !(bottomSourceCard.getRank() == topCard.getRank() - 1)) return false;
 		return true;
 	}

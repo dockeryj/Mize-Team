@@ -99,14 +99,14 @@ public class FreeCellGame {
 		return tableaux.get(index - 1);
 	}
 	
-	public boolean move(Pile x, Pile y) {
-		if (x.canTransfer(y)) {
-			x.transfer(y);
-			return true;
-		}
-		else {
-			return false;
-		}
+	
+	/**
+	 * Executes a move in the game
+	 * @param two piles
+	 * @return true if move occurs, false if not
+	 */
+	public boolean move(Pile fromPile, Pile toPile) {
+			return toPile.transfer(fromPile);
 	}
 	
     /**

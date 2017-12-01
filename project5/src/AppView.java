@@ -127,12 +127,23 @@ public class AppView extends JFrame{
 			}
 			else {
 				//need a try catch here with model.move
-				model.move(sourcePanel.getCell(), i.getCell());
+				if (! (i.getCell()).canTransfer(sourcePanel.getCell())) {
+					JOptionPane.showMessageDialog(AppView.this,
+                            "Invalid Move",
+                            "Illegal",                        
+                            JOptionPane.ERROR_MESSAGE);
+					sourcePanel = null;
+				} 
+				else {
+					model.move(sourcePanel.getCell(), i.getCell());
+					sourcePanel = null;
+				}
 				repaint();
-				sourcePanel = null;
 				if (model.winner()) {
-					//some sort of winning message
-					//some sort of quit and restart type of thing
+						JOptionPane.showMessageDialog(AppView.this,
+	                            "Winner",
+	                            "Game Over",                        
+	                            JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 		}
@@ -144,6 +155,7 @@ public class AppView extends JFrame{
 	private class NewGameListener implements ActionListener{
 		public void actionPerformed(ActionEvent e) {
 		model.reset();
+		sourcePanel = null;
 		//System.out.println(model);
 		repaint();
 		}
@@ -159,7 +171,7 @@ public class AppView extends JFrame{
 	
 		public void mouseClicked(MouseEvent e) {
 			informer.PanelPressed(currentPanel);
-			System.out.println("CurrentPanel: " + currentPanel + "sourcePanel: " +sourcePanel);
+			System.out.println("CurrentPanel: " + currentPanel.getCell().getTop());
 		}
 		
 		@Override
