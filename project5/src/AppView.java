@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Random;
 
 
 /**
@@ -30,13 +31,21 @@ public class AppView extends JFrame{
         model = freeCellGame;
         informer = new ViewInformer();
         
+        Random randR = new Random();
+        Random randG = new Random();
+        Random randB = new Random();
+    	
+    		int nR = randR.nextInt(250);
+    		int nG = randG.nextInt(250);
+    		int nB = randB.nextInt(250);
+    		
         
         // Fill the panels with the piles from the model
         for(int i = 1; i < 5; i++) {
-			homeCells.add(new SinglePilePanel(freeCellGame.getHomePile(i)));
-			freeCells.add(new SinglePilePanel(freeCellGame.getFreePile(i)));
-			tableaux1.add(new MultiPilePanel(freeCellGame.getTableau(i)));
-			tableaux2.add(new MultiPilePanel(freeCellGame.getTableau(i + 4)));
+			homeCells.add(new SinglePilePanel(freeCellGame.getHomePile(i), nR, nG, nB));
+			freeCells.add(new SinglePilePanel(freeCellGame.getFreePile(i), nR, nG, nB));
+			tableaux1.add(new MultiPilePanel(freeCellGame.getTableau(i), nR, nG, nB));
+			tableaux2.add(new MultiPilePanel(freeCellGame.getTableau(i + 4), nR, nG, nB));
 		}
         
         // Create the north panel of border layout. Contains labels for Home/Free Cells
@@ -106,7 +115,7 @@ public class AppView extends JFrame{
         southPanel.setLayout(new GridLayout(0,1));
         southPanel.add(newGameButton);
         newGameButton.addActionListener(new NewGameListener());
-        
+
         
         // Add north south and center panel to border layout (main container)
         mainContainer.setBackground(new Color(51, 102, 0));
@@ -160,6 +169,7 @@ public class AppView extends JFrame{
 		repaint();
 		}
 	}
+	
 	/**
 	 * Creates the listener for the mouse click
 	 */

@@ -10,8 +10,8 @@ public class MultiPilePanel extends AbstractPilePanel{
 	 * Constructor for MultPilePanel
 	 * @param p pile the panel is representing
 	 */
-	public MultiPilePanel(Pile p) {
-		super(p);
+	public MultiPilePanel(Pile p, int R, int G, int B) {
+		super(p, R, G, B);
 	}
 	
 	/**
