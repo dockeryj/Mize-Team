@@ -133,9 +133,11 @@ public class AppView extends JFrame{
 		public void PanelPressed(AbstractPilePanel i){
 			if (sourcePanel == null) {
 				sourcePanel = i;
+				System.out.println(sourcePanel);
 			}
 			else {
 				//need a try catch here with model.move
+				//need to call tableau logic using try catch
 				if (! (i.getCell()).canTransfer(sourcePanel.getCell())) {
 					JOptionPane.showMessageDialog(AppView.this,
                             "Invalid Move",
@@ -186,7 +188,7 @@ public class AppView extends JFrame{
 		@Override
 		public void mousePressed(MouseEvent e) {
 			informer.PanelPressed(currentPanel);
-			System.out.println("CurrentPanel: " + currentPanel.getCell().getTop());
+			System.out.println("CurrentCard: " + currentPanel.getCell().getTop());
 			
 		}
 
