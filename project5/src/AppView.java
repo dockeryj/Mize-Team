@@ -31,6 +31,7 @@ public class AppView extends JFrame{
         model = freeCellGame;
         informer = new ViewInformer();
         
+        //Allows program to have new random background at launch
         Random randR = new Random();
         Random randG = new Random();
         Random randB = new Random();
