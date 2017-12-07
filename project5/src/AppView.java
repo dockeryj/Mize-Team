@@ -157,7 +157,7 @@ public class AppView extends JFrame{
 	                            "Game Over",                        
 	                            JOptionPane.INFORMATION_MESSAGE);				
 				}
-				//NEED TO DEFINE LOSER 
+				//NEED TO DEFINE LOSER in FreeCellGame
 				if (model.loser()) {
 					JOptionPane.showMessageDialog(AppView.this,
                             "You lost! There are no more moves to be made",
