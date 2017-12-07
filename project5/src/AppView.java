@@ -155,7 +155,14 @@ public class AppView extends JFrame{
 						JOptionPane.showMessageDialog(AppView.this,
 	                            "Winner",
 	                            "Game Over",                        
-	                            JOptionPane.INFORMATION_MESSAGE);
+	                            JOptionPane.INFORMATION_MESSAGE);				
+				}
+				//NEED TO DEFINE LOSER 
+				if (model.loser()) {
+					JOptionPane.showMessageDialog(AppView.this,
+                            "You lost! There are no more moves to be made",
+                            "Game Over",                        
+                            JOptionPane.INFORMATION_MESSAGE);
 				}
 			}
 		}

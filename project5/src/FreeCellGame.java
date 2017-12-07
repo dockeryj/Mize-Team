@@ -118,6 +118,15 @@ public class FreeCellGame {
 		return true;
 	}
 	
+	/**
+     * Tests the game for a winner
+     * @return true if winner
+     */
+	public boolean loser() {
+		//THIS HAS NOT BEEN DEFINED YET
+		return false;
+	}
+	
 	
 	/**
      * Constructs the string representation of a free cell game.
