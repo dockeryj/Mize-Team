@@ -123,47 +123,43 @@ public class FreeCellGame {
      * @return true if have more moves
      */
 	public boolean hasMoreMoves() {
-		List<Boolean> possibleMoves = new ArrayList<Boolean>();
 		
-		for (Pile tableaux: tableaux) {
+		for (Pile tableauxs: tableaux) {
+			
 			for (Pile homecell: homeCells) {
-				if (! tableaux.canTransfer(homecell)) {
-					possibleMoves.add(false);
-				}else {
-					possibleMoves.add(true);
+				if (homecell.canTransfer(tableauxs)) {
+					return true;
 				}
 			}
 			for (Pile freecell: freeCells) {
-				if (! tableaux.canTransfer(freecell)) {
-						possibleMoves.add(false);
-					}else {
-						possibleMoves.add(true);
+				if (freecell.canTransfer(tableauxs)) {
+					return true;
 					}
 				}
+			
+			for (Pile tableaux: tableaux) {
+				if (tableaux.canTransfer(tableauxs)) {
+					return true;
+				}
 			}
+		}
 		for (Pile freecell: freeCells) {
+			
 			for (Pile homecell: homeCells) {
-				if (! freecell.canTransfer(homecell)) {
-					possibleMoves.add(false);
-				} else {
-					possibleMoves.add(true);
+				if (homecell.canTransfer(freecell)) {
+					return true;
 				}
 			}
 			
 			for (Pile tableaux: tableaux) {
-				if (! freecell.canTransfer(tableaux)) {
-					possibleMoves.add(false);
-				} else {
-					possibleMoves.add(true);
+				if (tableaux.canTransfer(freecell)) {
+					return true;
 				}
 			}
 		}
-		if (possibleMoves.contains(true)) {
-			return true;
-		}else {
-			return false;
-		}
+		return false;
 	}
+	
 	
 	
 	/**

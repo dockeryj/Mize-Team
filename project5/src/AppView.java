@@ -157,14 +157,14 @@ public class AppView extends JFrame{
 			repaint();
 			if (model.winner()) {
 					JOptionPane.showMessageDialog(AppView.this,
-                            "Winner",
-                            "Game Over",                        
+                            "Winner!",
+                            "YOU WIN",                        
                             JOptionPane.INFORMATION_MESSAGE);				
 			}
 			if (! model.hasMoreMoves()) {
 				System.out.println("Has more moves? " + model.hasMoreMoves());
 				JOptionPane.showMessageDialog(AppView.this,
-                        "You lost! There are no more moves to be made",
+                        "You lost! There are no more moves to be made. :(",
                         "Game Over",                        
                         JOptionPane.INFORMATION_MESSAGE);
 			}
