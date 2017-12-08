@@ -196,15 +196,5 @@ public class FreeCellGame {
 						getTableau(j).add(deck.deal());}
 			}
 		}
-	/**
-	 * Transfer method
-	 * @return pile 
-	 */	
-//	public boolean transferCard(Pile pile1, Pile pile2) {
-//		try {
-//			return pile2.transfer(pile1, 0, 0)
-//		}
-//		return pile2.transfer(pile1);
-//	}
-//	
+
 }

@@ -19,9 +19,6 @@ public class Tableau extends AbstractPile{
      * @return true if the pile can be transferred.
      */
 	public boolean canTransfer(Pile sourcePile) {
-//		if (low < 0 || high > sourcePile.size() - 1) throw new IllegalStateException("Illegal index");
-//		if (! super.canTransfer(sourcePile)) return false;
-//		if (! sourcePile.inOrder(low, high)) return false;
 		if(size() == 0) return true;
 		Card bottomSourceCard = sourcePile.getTop();
 		System.out.println(sourcePile.getTop());

@@ -31,9 +31,6 @@ public class HomeCellPile extends AbstractPile{
 			Suit targetSuit = homeCard.getSuit();
 			int targetRank = homeCard.getRank() + 1;
 			Card targetCard = new Card(targetSuit, targetRank);
-			//System.out.println(targetCard);
-			//System.out.println(sourceCard);
-			//System.out.println((sourceCard.compareTo(targetCard) == 0));
 			if (sourceCard.getRank() == targetCard.getRank() && sourceCard.getSuit() == targetCard.getSuit()) return true;
 			else return false;}	
 	}
