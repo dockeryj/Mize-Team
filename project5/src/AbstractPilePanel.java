@@ -29,6 +29,9 @@ public class AbstractPilePanel extends JPanel{
 		super.paintComponent(g);	
 	}
 
+	/**
+	 * Gets the cell
+	 */
 	public Pile getCell() {
 		return pile;
 	}

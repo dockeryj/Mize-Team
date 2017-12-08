@@ -134,39 +134,43 @@ public class AppView extends JFrame{
 		public void PanelPressed(AbstractPilePanel i){
 			if (sourcePanel == null) {
 				sourcePanel = i;
-				System.out.println(sourcePanel);
+				System.out.println(sourcePanel.getCell());
 			}
 			else {
-				//need a try catch here with model.move
-				//need to call tableau logic using try catch
-				if (! (i.getCell()).canTransfer(sourcePanel.getCell())) {
-					JOptionPane.showMessageDialog(AppView.this,
-                            "Invalid Move",
-                            "Illegal",                        
-                            JOptionPane.ERROR_MESSAGE);
+				if (i.getCell().transfer(sourcePanel.getCell())){
+					System.out.println("success");
+					System.out.println(sourcePanel.getCell().getClass());
+					System.out.println(i.getCell().getClass());
 					sourcePanel = null;
-				} 
+				}
 				else {
-					model.move(sourcePanel.getCell(), i.getCell());
+					System.out.println("Failed");
+					System.out.println(sourcePanel.getCell().getTop());
+					System.out.println(i.getCell().getTop());
+					JOptionPane.showMessageDialog(AppView.this,"Invalid Move",
+	                       "Illegal",                        
+	                        JOptionPane.ERROR_MESSAGE);
 					sourcePanel = null;
+						}
 				}
-				repaint();
-				if (model.winner()) {
-						JOptionPane.showMessageDialog(AppView.this,
-	                            "Winner",
-	                            "Game Over",                        
-	                            JOptionPane.INFORMATION_MESSAGE);				
-				}
-				//NEED TO DEFINE LOSER in FreeCellGame
-				if (model.loser()) {
+							
+			repaint();
+			if (model.winner()) {
 					JOptionPane.showMessageDialog(AppView.this,
-                            "You lost! There are no more moves to be made",
+                            "Winner",
                             "Game Over",                        
-                            JOptionPane.INFORMATION_MESSAGE);
-				}
+                            JOptionPane.INFORMATION_MESSAGE);				
+			}
+			//NEED TO DEFINE LOSER in FreeCellGame
+			if (model.loser()) {
+				JOptionPane.showMessageDialog(AppView.this,
+                        "You lost! There are no more moves to be made",
+                        "Game Over",                        
+                        JOptionPane.INFORMATION_MESSAGE);
+			}
 			}
 		}
-	}
+
 	
 	/**
 	 * simple button listener that creates a new game when called upon

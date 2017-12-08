@@ -123,7 +123,7 @@ public class FreeCellGame {
      * @return true if winner
      */
 	public boolean loser() {
-		//THIS HAS NOT BEEN DEFINED YET
+		
 		return false;
 	}
 	
@@ -162,5 +162,15 @@ public class FreeCellGame {
 						getTableau(j).add(deck.deal());}
 			}
 		}
-	
+	/**
+	 * Transfer method
+	 * @return pile 
+	 */	
+//	public boolean transferCard(Pile pile1, Pile pile2) {
+//		try {
+//			return pile2.transfer(pile1, 0, 0)
+//		}
+//		return pile2.transfer(pile1);
+//	}
+//	
 }

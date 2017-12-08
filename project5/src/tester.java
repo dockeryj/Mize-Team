@@ -76,6 +76,9 @@ public class tester {
 		tableau4.transfer(tableau5, 0, 0);
 		System.out.println("Tableau 4 after transfer: \n" + tableau4);
 		System.out.println("Tableau 5 after transfer (Expect 2 of clubs): \n" + tableau5);
+		tableau5.transfer(tableau4, 0,0);
+		System.out.println("Tableau 4 after transfer: \n" + tableau4);
+		System.out.println("Tableau 5 after transfer (Expect 2 of clubs): \n" + tableau5);
 		
 		
 		System.out.println("\nTesting game.toString()");

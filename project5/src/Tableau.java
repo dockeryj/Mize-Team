@@ -18,12 +18,15 @@ public class Tableau extends AbstractPile{
      * @throws IllegalStateException if index is out of bounds. 
      * @return true if the pile can be transferred.
      */
-	public boolean canTransfer(Pile sourcePile, int low, int high) {
-		if (low < 0 || high > sourcePile.size() - 1) throw new IllegalStateException("Illegal index");
-		if (! super.canTransfer(sourcePile)) return false;
-		if (! sourcePile.inOrder(low, high)) return false;
-		Card bottomSourceCard = sourcePile.get(low);
+	public boolean canTransfer(Pile sourcePile) {
+//		if (low < 0 || high > sourcePile.size() - 1) throw new IllegalStateException("Illegal index");
+//		if (! super.canTransfer(sourcePile)) return false;
+//		if (! sourcePile.inOrder(low, high)) return false;
+		if(size() == 0) return true;
+		Card bottomSourceCard = sourcePile.getTop();
+		System.out.println(sourcePile.getTop());
 		Card topCard = this.getTop();
+		System.out.println(topCard);
 		if (!getNextSuit(topCard).contains(bottomSourceCard.getSuit()) || !(bottomSourceCard.getRank() == topCard.getRank() - 1)) return false;
 		return true;
 	}
@@ -35,10 +38,12 @@ public class Tableau extends AbstractPile{
      * @throws IllegalStateException if index is out of bounds. 
      * @return true if they are in order
      */
-	public boolean transfer(Pile sourcePile, int low, int high) {
-		if (low < 0 || high > sourcePile.size() - 1) throw new IllegalStateException("Illegal index");
-		if(! canTransfer(sourcePile, low, high)) return false;
-		for (int i = low; i <= high; i++) this.add(sourcePile.remove(0));
+	public boolean transfer(Pile sourcePile) {
+//		if (low < 0 || high > sourcePile.size() - 1) throw new IllegalStateException("Illegal index");
+		if(! canTransfer(sourcePile)) return false;
+		this.add(sourcePile.remove(sourcePile.size() - 1));
 		return true; 
 	}
+	
+
 }

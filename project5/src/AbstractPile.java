@@ -60,13 +60,11 @@ public abstract class AbstractPile implements Pile, Iterable<Card>
 	public boolean canTransfer(Pile sourcePile) {
 		return((size() < maxSize()) && (!sourcePile.isEmpty()) && (!(sourcePile instanceof HomeCellPile)));}
 	
-	
 	public boolean transfer(Pile sourcePile) {
 		if (! canTransfer(sourcePile)) return false;
 		abstractPile.add(sourcePile.remove());
 		return true;
-	}
-	
+	}	
 	
 	public boolean isEmpty() {
 		return abstractPile.isEmpty();}
