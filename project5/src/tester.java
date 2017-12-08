@@ -1,3 +1,5 @@
+import javax.management.modelmbean.ModelMBean;
+
 /**
  * A tester program for the game
  * @author Roby Mize
@@ -68,21 +70,25 @@ public class tester {
 		System.out.println("Tableau 4: \n" + tableau4);
 		System.out.println("Tableau 5: \n" + tableau5);
 
-		tableau4.transfer(tableau5, 0, 2);
+		tableau4.transfer(tableau5);
 		System.out.println("Tableau 4 after transfer: \n" + tableau4);
 		System.out.println("Tableau 5 after transfer (Expect empty): \n" + tableau5);
 		Card g = new Card(Suit.club, 2);
 		tableau5.add(g);
-		tableau4.transfer(tableau5, 0, 0);
+		tableau4.transfer(tableau5);
 		System.out.println("Tableau 4 after transfer: \n" + tableau4);
 		System.out.println("Tableau 5 after transfer (Expect 2 of clubs): \n" + tableau5);
-		tableau5.transfer(tableau4, 0,0);
+		tableau5.transfer(tableau4);
 		System.out.println("Tableau 4 after transfer: \n" + tableau4);
 		System.out.println("Tableau 5 after transfer (Expect 2 of clubs): \n" + tableau5);
 		
 		
 		System.out.println("\nTesting game.toString()");
 		System.out.println(game.toString());
+		
+		
+		System.out.println(game.hasMoreMoves());
+		
 		
 		System.out.println("_________Test Complete__________");
 	} 
